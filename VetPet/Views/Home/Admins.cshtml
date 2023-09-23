@@ -1,0 +1,28 @@
+﻿@model List<VetPet.Models.Admin>
+
+<h2>Listado de Administradores</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Correo Electrónico</th>
+            <th>Contraseña</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var admin in Model)
+        {
+            <tr>
+
+                <td>@admin.nombres</td>
+                <td> @admin.apePaterno @admin.apeMaterno</td>
+                <td>@admin.correo</td>
+                <td>@admin.contraseña</td>
+                
+            </tr>
+        }
+    </tbody>
+</table>
