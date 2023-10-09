@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace VetPet.Models
 {
@@ -9,6 +10,7 @@ namespace VetPet.Models
 
         public string Descripcion { get; set; }
 
+        public ICollection <ProductoEntity> Producto { get; set; }
         /*
          TIPO ANIMAL
 ID TIPO ANIMAL

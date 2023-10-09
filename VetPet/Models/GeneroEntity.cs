@@ -9,6 +9,8 @@ namespace VetPet.Models
         public string Descripcion { get; set; }
 
         public MedicoEntity Medico { get; set; }
+        
+        public MascotaEntity Mascota { get; set; }
         /*
          GENERO
 ID GENERO

@@ -37,6 +37,12 @@ namespace VetPet.Models
         public string Correo { get; set; }  
         public string Contrasena { get; set; }
 
+        public ICollection<CitaMedicaEntity> CitaMedica { get; set;}
+
+        public ICollection<AtencionMedicaEntity> AtencionMedica { get;set; }
+
+        public HistorialMedicoEntity HistorialMedico { get; set;}
+
 
 
 /*MEDICO 

@@ -11,6 +11,7 @@ namespace VetPet.Models
         public string Direccion { get; set; }
 
         public ICollection<MedicoEntity> Medico { get; set; }
+        public ICollection<CitaMedicaEntity> CitaMedica { get; set; }
         /*
         SEDE CLINICA
 ID SEDE

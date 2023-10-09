@@ -11,6 +11,8 @@ namespace VetPet.Models
 
         public ICollection<MedicoEntity> Medico { get; set; }
 
+        public ICollection<EspecialidadEntity> Especialidad { get; set;}
+
         /*
          ESPECIALIDAD
 ID ESPECIALIDAD

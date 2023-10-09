@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace VetPet.Models
 {
     public class UsuarioEntity
     {
-
+        [Key]
         public int Id { get; set; }
         public string Imagen { get; set; }
         public string Apellido { get; set; }
@@ -23,6 +24,8 @@ namespace VetPet.Models
         public string Contrasena { get; set; }
 
         public ICollection<MascotaEntity> Mascota { get; set;}
+
+        public ICollection<CitaMedicaEntity> CitaMedica { get; set;}
         /*
          USUARIO
 ID USUARIO
