@@ -26,8 +26,8 @@ namespace VetPet
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<VetContext>(options =>
-    options.UseSqlServer(Configuration.GetConnectionString("cadena")));
+            services.AddDbContext<VetContext>(options => options.UseSqlServer(Configuration.GetConnectionString("cadena"),
+                ef => ef.MigrationsAssembly(typeof(VetContext).Assembly.FullName)));
             services.AddControllersWithViews();
         }
 

@@ -1,9 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace VetPet.Models
 {
     public class Admin
     {
+        [Key]
         [Column("adminId")]
         public int Id { get; set; }
         public string nombres { get; set; }
