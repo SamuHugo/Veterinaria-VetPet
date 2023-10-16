@@ -1,0 +1,76 @@
+﻿@model VetPet.Models.ProductoEntity
+
+<h2 class="titulo">Eliminar Producto</h2>
+
+<div class="form-container">
+    <div class="product-details">
+        <div class="image-container">
+            <img src="~/img/@Model.Imagen" alt="Imagen del producto" />
+        </div>
+        <div class="details">
+            <p><strong>Id:</strong> @Model.Id</p>
+            <p><strong>Nombre:</strong> @Model.Nonbre</p>
+            <p><strong>Descripción:</strong> @Model.DescripcionProd</p>
+            <p><strong>Marca:</strong> @Model.Marca?.Descripcion</p>
+            <p><strong>Categoría:</strong> @Model.Categoria?.Descripcion</p>
+            <p><strong>Tipo de Animal:</strong> @Model.TipoAnimal?.Descripcion</p>
+            <p><strong>SKU:</strong> @Model.SKU</p>
+            <p><strong>Precio:</strong> @Model.Precio</p>
+            <p><strong>Stock:</strong> @Model.Stock</p>
+        </div>
+    </div>
+
+    <p class="confirmation-message">¿Seguro que quieres eliminar el siguiente producto?</p>
+
+  <div class="button-container">
+        <form asp-action="Delete" asp-route-id="@Model.Id" method="post">
+            <input type="submit" value="Eliminar" class="btn btn-danger" />
+            <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+</div>
+
+<style>
+    .titulo {
+        text-align: center;
+        color: blue;
+        margin-bottom: 20px;
+    }
+
+    .form-container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .product-details {
+        display: flex;
+    }
+
+    .image-container {
+        flex: 1;
+        padding: 10px;
+    }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+    .details {
+        flex: 2;
+        padding: 10px;
+    }
+
+    .confirmation-message {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .button-container {
+        text-align: center;
+    }
+
+    .btn {
+        margin: 5px;
+    }
+</style>

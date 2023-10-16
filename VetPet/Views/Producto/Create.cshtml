@@ -1,0 +1,119 @@
+﻿@model VetPet.Models.ProductoEntity
+
+<h2 class="titulo">Crear Nuevo Producto</h2>
+
+<div class="form-container">
+    <form asp-action="Create" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label asp-for="Nonbre">Nombre</label>
+            <input asp-for="Nonbre" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="DescripcionProd">Descripción</label>
+            <input asp-for="DescripcionProd" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="CaracteristicasProd">Características</label>
+            <textarea asp-for="CaracteristicasProd" class="form-control" rows="4" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="Marca">Marca</label>
+            <select asp-for="Marca.Id" class="form-control" required>
+                <option value="">Seleccione una marca</option>
+                @foreach (var marca in ViewBag.Marca)
+                {
+                    <option value="@marca.Id">@marca.Descripcion</option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="Categoria">Categoría</label>
+            <select asp-for="Categoria.Id" class="form-control">
+                <option value="">Seleccione una categoría</option>
+                @foreach (var categoria in ViewBag.Categoria)
+                {
+                    <option value="@categoria.Id">@categoria.Descripcion</option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="TipoAnimal">Tipo de Animal</label>
+            <select asp-for="TipoAnimal.Id" class="form-control" required>
+                <option value="">Seleccione un tipo de animal</option>
+                @foreach (var tipoAnimal in ViewBag.TipoAnimal)
+                {
+                    <option value="@tipoAnimal.Id">@tipoAnimal.Descripcion</option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="SKU">SKU</label>
+            <input asp-for="SKU" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Precio">Precio</label>
+            <input asp-for="Precio" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Stock">Stock</label>
+            <input asp-for="Stock" class="form-control" required>
+        </div>
+
+       
+        <div class="form-group">
+            <label asp-for="Imagen">Imagen del Producto</label>
+            <input asp-for="Imagen" type="file" class="form-control-file" id="imagenInput" accept="image/*">
+            <div id="imagenPreviewContainer" style="display: none;">
+                <img id="imagenPreview" src="#" alt="Vista previa de la imagen" style="max-width: 200px; max-height: 200px;" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Guardar Producto</button>
+            <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>
+
+<style>
+    .titulo {
+        text-align: center;
+        color: blue;
+        margin-bottom: 20px;
+    }
+
+    .form-container {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+</style>
+
+<script>
+    document.getElementById("imagenInput").addEventListener("change", function () {
+        var fileInput = this;
+        var imgPreviewContainer = document.getElementById("imagenPreviewContainer");
+        var imgPreview = document.getElementById("imagenPreview");
+
+        if (fileInput.files && fileInput.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                imgPreview.src = e.target.result;
+                imgPreviewContainer.style.display = "block";
+            };
+
+            reader.readAsDataURL(fileInput.files[0]);
+        } else {
+            imgPreview.src = "";
+            imgPreviewContainer.style.display = "none";
+        }
+    });
+</script>

@@ -11,11 +11,14 @@ namespace VetPet.Models
 
         public string DescripcionProd { get; set; }
 
-        public string CaracteristicasProd { get; set; } 
+        public string CaracteristicasProd { get; set; }
 
-        public MarcaEntity Marca { get; set; }  
+
+        public MarcaEntity Marca { get; set; }
+
 
         public CategoriaEntity Categoria { get; set; }
+
 
         public TipoAnimalEntity TipoAnimal { get; set; }
 
@@ -26,17 +29,17 @@ namespace VetPet.Models
         public int Stock { get; set; }
         /*
          PRODUCTO/ITEM
-ID ITEM
-IMAGEN
-NOMBRE
-DESCRIPCIÓN
-CARACTERISTICAS
-ID MARCA
-ID CATEGORIA
-ID TIPO ANIMAL
-SKU (CODIGO DE ITEM)
-PRECIO
-STOCK
-*/
+         ID ITEM
+         IMAGEN
+         NOMBRE
+         DESCRIPCIÓN
+         CARACTERISTICAS
+         ID MARCA
+         ID CATEGORIA
+         ID TIPO ANIMAL
+         SKU (CODIGO DE ITEM)
+         PRECIO
+         STOCK
+        */
     }
 }

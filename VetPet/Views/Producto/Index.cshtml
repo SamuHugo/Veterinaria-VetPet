@@ -1,0 +1,72 @@
+﻿@model List<VetPet.Models.ProductoEntity>
+
+<h2 class="titulo">Mantenimiento de productos</h2>
+
+<div class="crearnuevo">
+    <a asp-controller="Producto" asp-action="Create" class="btn btn-primary">Crear Nuevo</a>
+</div>
+
+<div class="table-container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Características</th>
+                <th>Marca</th>
+                <th>Categoría</th>
+                <th>Tipo de Animal</th>
+                <th>SKU</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var producto in Model)
+            {
+                <tr>
+                    <td>@producto.Id</td>
+                    <td>
+                        <img src="~/img/@producto.Imagen" alt="Imagen del producto" style="max-width: 100px; max-height: 100px" />
+                    </td>
+                    <td>@producto.Nonbre</td>
+                    <td>@producto.DescripcionProd</td>
+                    <td>@producto.CaracteristicasProd</td>
+                    <td>@producto.Marca.Descripcion</td>
+                    <td>@producto.Categoria.Descripcion</td>
+                    <td>@producto.TipoAnimal.Descripcion</td>
+                    <td>@producto.SKU</td>
+                    <td>@producto.Precio</td>
+                    <td>@producto.Stock</td>
+                    <td>
+                        <a asp-controller="Producto" asp-action="Edit" asp-route-id="@producto.Id" class="btn btn-info btn-sm crud-button">Editar</a>
+                    </td>
+                    <td>
+                        <a asp-controller="Producto" asp-action="Delete" asp-route-id="@producto.Id" class="btn btn-danger btn-sm crud-button">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<style>
+    .titulo {
+        text-align: center;
+        color: blue;
+        margin-bottom: 20px;
+    }
+
+    .crearnuevo {
+        text-align: left;
+        margin-bottom: 10px;
+    }
+
+    .crud-button {
+        margin-left: 5px;
+    }
+</style>
