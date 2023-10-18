@@ -78,7 +78,7 @@ namespace VetPet.Controllers
                     return NotFound();
                 }
 
-                // Actualiza todas las propiedades del modelo Alumno
+
                 tipo.Descripcion = model.Descripcion;
 
                 _context.SaveChanges();

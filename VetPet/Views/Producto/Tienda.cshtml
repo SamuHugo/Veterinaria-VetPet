@@ -1,0 +1,49 @@
+﻿@model List<VetPet.Models.ProductoEntity>
+
+<h2 class="titulo">Tienda</h2>
+
+<div class="products-container">
+    @foreach (var producto in Model)
+    {
+        <div class="product-item">
+            <img src="~/img/@producto.Imagen" alt="@producto.Nonbre" class="product-image">
+            <h3>@producto.Nonbre</h3>
+            <p>@producto.DescripcionProd</p>
+            <p>Precio: $@producto.Precio</p>
+            <p>Stock: @producto.Stock</p>
+            <a href="@Url.Action("Details", "Producto", new { id = producto.Id })">Detalles</a>
+        </div>
+    }
+</div>
+<style>
+    .titulo {
+        text-align: center;
+        color: blue;
+        margin-bottom: 20px;
+    }
+
+    .products-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .product-item {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin: 10px;
+        width: 30%;
+    }
+
+    .product-item img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .product-image {
+        width: 225px;
+        height: 225px;
+        object-fit: cover; /* Esto asegura que las imágenes mantengan su relación de aspecto */
+        border: 1px solid #ddd;
+    }
+</style>

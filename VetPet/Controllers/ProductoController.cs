@@ -71,16 +71,16 @@ namespace VetPet.Controllers
                             newFileName = $"{fileNameOnly} ({counter}){fileExtension}";
                         }
 
-                        // Asigna el nuevo nombre al modelo
+                        //Se asigna el nuevo nombre al modelo
                         model.Imagen = newFileName;
                     }
                     else
                     {
-                        // El archivo no existe en el servidor, asigna el nombre original al modelo
+                        // Si el archivo no existe en el servidor, asigna el nombre original al modelo
                         model.Imagen = originalFileName;
                     }
 
-                    // Guarda la imagen en el servidor
+                    // Se Guarda la imagen en el servidor
                     filePath = Path.Combine(uploadsFolder, model.Imagen);
                     imagen.CopyTo(new FileStream(filePath, FileMode.Create));
                 }
@@ -198,6 +198,11 @@ namespace VetPet.Controllers
                 producto.Categoria = _context.Categoria.FirstOrDefault(c => c.Id == model.Categoria.Id);
                 producto.TipoAnimal = _context.TipoAnimal.FirstOrDefault(ta => ta.Id == model.TipoAnimal.Id);
 
+                if (model.Imagen != null)
+                {
+                    producto.Imagen = model.Imagen;
+                }
+
                 _context.SaveChanges();
 
                 return RedirectToAction("Index");
@@ -265,5 +270,33 @@ namespace VetPet.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public IActionResult Tienda()
+        {
+            var productos = _context.Producto
+                .Include(p => p.Marca)
+                .Include(p => p.Categoria)
+                .Include(p => p.TipoAnimal)
+                .ToList();
+            return View(productos);
+        }
+        public ActionResult Details(int id)
+        {
+
+            var producto = _context.Producto
+                .Include(p => p.Marca)
+                .Include(p => p.Categoria)
+                .Include(p => p.TipoAnimal)
+                .FirstOrDefault(p => p.Id == id);
+
+            if (producto == null)
+            {
+
+                return RedirectToAction("Index");
+            }
+
+            return View(producto);
+        }
+
     }
 }

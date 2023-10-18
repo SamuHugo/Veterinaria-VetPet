@@ -1,0 +1,36 @@
+﻿@model VetPet.Models.ProductoEntity
+
+<h2>Detalles del Producto</h2>
+
+<div class="product-details-container">
+    <div class="product-details">
+        <h4>Nombre: @Model.Nonbre</h4>
+        <p>Descripción: @Model.DescripcionProd</p>
+        <p>Características: @Model.CaracteristicasProd</p>
+        <p>Marca: @Model.Marca.Descripcion</p>
+        <p>Categoría: @Model.Categoria.Descripcion</p>
+        <p>Tipo de Animal: @Model.TipoAnimal.Descripcion</p>
+        <p>Precio: @Model.Precio</p>
+        <p>Stock: @Model.Stock</p>
+    </div>
+    <div class="product-image">
+        <img src="~/img/@Model.Imagen" alt="Imagen del Producto" />
+    </div>
+</div>
+<style>
+.product-details-container {
+    display: flex;
+}
+
+.product-details {
+    flex: 1; 
+    padding: 20px; 
+}
+
+.product-image {
+    flex: 1;
+    padding: 20px; 
+    text-align: center; 
+}
+
+</style>
