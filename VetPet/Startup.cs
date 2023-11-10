@@ -55,7 +55,7 @@ namespace VetPet
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Login}/{action=Index}/{id?}");
+                    pattern: "{controller=Producto}/{action=Index}/{id?}");
             });
         }
     }

@@ -1,0 +1,57 @@
+/* #region USER */
+.elementor__header-user{
+    width: 100%;
+    overflow: hidden;
+    margin: auto;
+}
+
+.content__header-user{
+    margin: 100px auto 0 auto;
+}
+
+.header-user-module{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.img-profile{
+    width: 144px;
+    height: 144px;
+    background-color: var(--color-pri-4);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-profile>img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+/* #endregion */
+
+/* #region BACK */
+
+.elementor__user-back{
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.content__user-back{
+    margin: 100px auto 0 auto;
+}
+
+.content__user-back>a{
+    color: var(--color-pri-4);
+    transition: all ease .4s;
+}
+
+.content__user-back>a:hover{
+    transform: scale(.94);
+}
+
+/* #endregion */

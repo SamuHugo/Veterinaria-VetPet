@@ -1,65 +1,104 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - VetPet</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Grupo de Desarrollo VetPet">
+    <meta name="description"
+          content="En la Clínica Veterinaria Vetpet nos apasiona el bienestar de las mascotas. Por eso, desde hace más de 50 años, brindamos servicios de calidad y profesionalismo para cuidar de su salud y belleza. ">
+    <meta name="keywords"
+          content="clinica Veterinaria, veterinaria">
+    <link rel="stylesheet" href="~/css/main.css">
+    <script src="https://kit.fontawesome.com/9541643713.js" crossorigin="anonymous"></script>
+    <title>@ViewData["Title"] | VetPet</title>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">VetPet</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Admins">Admins</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Producto" asp-action="Tienda">Tienda</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="mantenimientosDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Mantenimientos
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="mantenimientosDropdown">
-                                <a class="dropdown-item" asp-area="" asp-controller="Marca" asp-action="Index">Marcas</a>
-                                <a class="dropdown-item" asp-area="" asp-controller="Categoria" asp-action="Index">Categorias</a>
-                                <a class="dropdown-item" asp-area="" asp-controller="TipoAnimal" asp-action="Index">Tipos de Animales</a>
-                                <a class="dropdown-item" asp-area="" asp-controller="Producto" asp-action="Index">Productos</a> 
-                            </div>
-                        </li>
+    <div class="nav__bar-options">
+        <!--NAV BAR - STORE-->
+        <div class="container-header">
+            <header id="nav" class="header-nav">
+                <a class="container-logo" asp-area="" asp-controller="Home" asp-action="Index">
+                    <div id="logo-nav" class="nav-logo"></div>
+                </a>
+
+                <nav class="nav-main">
+                    <ul id="links" class="nav-list">
+                        <li><a class="nav-active" asp-area="" asp-controller="Home" asp-action="Index">INICIO</a></li>
+                        <li><a href="#">SERVICIOS VETERINARIOS</a></li>
+                        <li><a class="btn-nav" href="#">ESPECIALIDADES</a></li>
+                        <li><a class="color-store" href="#">TIENDA PET</a></li>
+                        <li><a class="" href="#">CONOCENOS</a></li>
                     </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+                    <div class="bar__sign-in">
+                        <label for="btn-user" class="btn btn-main"><i class="icon_bar-sign-in"></i> INICIAR SESION</label>
+                    </div>
+                    <input type="checkbox" checked id="btn-user">
+                    <div class="container-card__sign-in">
+                        <div class="content-card__sign-in text-center">
+                            <p class="title-sm">Hola, Bienvenido</p>
+                            <div class="content-buttons">
+                                <button class="btn-s btn-main">Iniciar Sesión</button>
+                                <button href="" class="btn-s btn-dark-2">Registrate</button>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+        </div>
+    </div>
+
     <div class="container">
-        <main role="main" class="pb-3">
+        <main role="main">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - VetPet - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @RenderSection("Scripts", required: false)
+    <div class="container__footer">
+        <footer class="content__footer">
+            <div class="container__footer-box">
+
+                <div class="footer-box">
+                    <div class="footer-logo">
+                        <a asp-area="" asp-controller="Home" asp-action="Index"><img src="../img/base/logos/logo-vetpet.PNG" alt="logo"></a>
+                    </div>
+                    <p class="footer-description">"La felicidad no se compra, se saca a pasear."</p>
+                </div>
+
+                <div class="footer-box">
+                    <h2 class="footer-title">ACCESOS DIRECTOS</h2>
+                    <div class="footer-shortcuts">
+                        <a href="" class="footer-link">Servicios Veterinarios</a>
+                        <a href="" class="footer-link">Especialidades</a>
+                        <a href="" class="footer-link">Solicitar Cita Veterinaria</a>
+                        <a href="" class="footer-link">Consultar Historial Clínico</a>
+                        <a href="" class="footer-link">Tienda Online</a>
+                    </div>
+                </div>
+
+                <div class="footer-box">
+                    <h2 class="footer-title">CONTÁCTANOS</h2>
+                    <div class="footer-shortcuts">
+                        <a href="" class="footer-link">(01) 560 5918</a>
+                        <a href="#" class="footer-link">999 999 999</a>
+                        <a href="#" class="footer-link">veterinaria.VP.contacto@vetpet.com</a>
+                        <a href="#" class="footer-link">Av. La Molina 2062</a>
+                    </div>
+                    <h2 class="footer-title footer-title-sub">SIGUENOS</h2>
+                    <div class="footer-shortcuts-social">
+                        <a href="#" class="footer-social-icon"><i class="fa-brands fa-facebook-f footer-social-icon"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fa-brands fa-instagram footer-social-icon"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fa-brands fa-youtube footer-social-icon"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fa-brands fa-spotify footer-social-icon"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="container__footer-bottom">
+                <div class="footer-bottom-box">
+                    <p class="footer-bottom-info">Desarrollado por Equipo de Servicios Web I</p>
+                    <p class="footer-bottom-copyright">&copy; 2023 <strong>Clínica Veterinaria VetPet</strong> - Todos los Derechos Reservados</p>
+                </div>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>

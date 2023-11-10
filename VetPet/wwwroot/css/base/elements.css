@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    font-size: 16px;
+    font-family: 'Ubuntu', sans-serif;
+    font-style: normal;
+    color: var(--color-title);
+}
+
+a{
+    text-decoration: none !important;
+    text-transform: none;
+}
+
+ul{
+    list-style: none;
+}
+
+a,
+ul,
+img,
+i{
+    user-select: none !important;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+span,
+p{
+    text-transform: none;
+}
+
+input,
+select,
+textarea {
+    outline: 0;
+    border: none;
+    text-transform: none;
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+    text-transform: none;
+}
+
+p{
+    text-transform: none;
+}
+
+button {
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}

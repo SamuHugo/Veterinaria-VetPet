@@ -1,0 +1,143 @@
+
+/*---- btn crud ----*/
+
+.btn{
+    color: var(--color-white);
+    padding: 15px 12px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    font-style: normal;
+    line-height: normal;
+    border-radius: 10px;
+    transition: all ease .5s;
+}
+
+.btn-xl{
+    color: var(--color-white);
+    padding: 20px 17px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    font-style: normal;
+    line-height: normal;
+    border-radius: 10px;
+    transition: all ease .5s;
+}
+
+.btn-border{
+    color: var(--color-red-2);
+    padding: 15px 12px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: normal;
+    border: 2px solid var(--color-red-2);
+    border-radius: 10px;
+    transition: all ease .5s;
+}
+
+.btn-s{
+    color: var(--color-white);
+    font-size: 13px;
+    padding: 10px 10px;
+    font-family: 'ubuntu', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    font-style: normal;
+    line-height: normal;
+    border-radius: 10px;
+    transition: all ease .5s;
+}
+
+.btn:hover, .btn-s:hover, .btn-xl:hover{
+    transform: scale(.94);
+    filter: brightness(95%);
+}
+
+.btn-s>i{
+    padding: 10px 20px 10px 2px!important;
+}
+
+.btn-cart{
+    background-color: var(--color-sec-1);
+}
+
+.btn-cart-2{
+    background-color: var(--color-red-2);
+}
+
+.btn-main{
+    background-color: var(--color-main);
+}
+
+.btn-primary{
+    background-color: var(--color-pri-1);
+}
+
+.btn-primary-2{
+    background-color: var(--color-pri-2);
+}
+
+.btn-primary-3{
+    background-color: var(--color-pri-3);
+}
+
+.btn-primary-4{
+    background-color: var(--color-pri-4);
+}
+
+.btn-secondary{
+    background-color: var(--color-sec-1);
+}
+
+.btn-secondary-2{
+    background-color: var(--color-sec-2);
+}
+
+.btn-secondary-3{
+    background-color: var(--color-sec-3);
+}
+
+.btn-dark{
+    background-color: var(--color-title);
+}
+
+.btn-dark-2{
+    background-color: var(--color-p);
+}
+
+.btn-delete{
+    background-color: var(--color-red);
+}
+
+.btn-edit{
+    background-color: var(--color-yellow);
+}
+
+.btn-info{
+    background-color: var(--color-green);
+}
+
+.btn-exit{
+    background-color: var(--color-red-2);
+}
+
+
+.slider__btn{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: var(--color-white-2);
+    top: 55%;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    line-height: 40px  !important;
+    border-radius: 50%;
+    transition: all .4s ease;
+    color: var(--color-black);
+}
+
+.slider__btn:hover{
+    background: rgba(209, 209, 209, 0.8);
+}

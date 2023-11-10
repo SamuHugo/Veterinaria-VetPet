@@ -6,23 +6,17 @@
     <a asp-controller="Producto" asp-action="Create" class="btn btn-primary">Crear Nuevo</a>
 </div>
 
-<div class="table-container">
+<div class="container-table">
     <table class="table">
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Imagen</th>
                 <th>Nombre</th>
-                <th>Descripción</th>
-                <th>Características</th>
                 <th>Marca</th>
-                <th>Categoría</th>
-                <th>Tipo de Animal</th>
-                <th>SKU</th>
                 <th>Precio</th>
                 <th>Stock</th>
-                <th></th>
-                <th></th>
+                <th>Opciones</th>
             </tr>
         </thead>
         <tbody>
@@ -34,19 +28,13 @@
                         <img src="~/img/@producto.Imagen" alt="Imagen del producto" style="max-width: 100px; max-height: 100px" />
                     </td>
                     <td>@producto.Nonbre</td>
-                    <td>@producto.DescripcionProd</td>
-                    <td>@producto.CaracteristicasProd</td>
                     <td>@producto.Marca?.Descripcion</td>
-                    <td>@producto.Categoria?.Descripcion</td>
-                    <td>@producto.TipoAnimal?.Descripcion</td>
-                    <td>@producto.SKU</td>
                     <td>@producto.Precio</td>
                     <td>@producto.Stock</td>
                     <td>
-                        <a asp-controller="Producto" asp-action="Edit" asp-route-id="@producto.Id" class="btn btn-info btn-sm crud-button">Editar</a>
-                    </td>
-                    <td>
-                        <a asp-controller="Producto" asp-action="Delete" asp-route-id="@producto.Id" class="btn btn-danger btn-sm crud-button">Eliminar</a>
+                        <a asp-controller="Producto" asp-action="Details" asp-route-id="@producto.Id" class="btn-s btn-info"><i class="icon-info"></i></a>
+                        <a asp-controller="Producto" asp-action="Edit" asp-route-id="@producto.Id" class="btn-s btn-edit"><i class="icon-edit"></i></a>
+                        <a asp-controller="Producto" asp-action="Delete" asp-route-id="@producto.Id" class="btn-s btn-delete"><i class="icon-delete"></i></a>
                     </td>
                 </tr>
             }

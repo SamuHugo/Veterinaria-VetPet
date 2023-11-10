@@ -1,0 +1,131 @@
+.elementor__add{
+    width: 100%;
+    background: linear-gradient(174deg, #9ADAE8 4.64%, rgba(156, 190, 255, 0.00) 165.1%);
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+    margin: 30px 0;
+}
+
+.elementor-content__add{
+    width: max-content;
+    display: inline-flex;
+}
+
+
+.box-content__information{
+    color: var(--color-main);
+    margin: auto 0;
+}
+
+.box-content__information>h1{
+    margin-bottom: 20px;
+}
+
+.box-content__information>p{
+    margin-bottom: 50px;
+}
+
+
+.box-content__item>h1{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 64px;
+}
+
+.box-content__item>img{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.box-content__buttons{
+    gap: 45px;
+}
+
+.box-content__buttons>a:first-child{
+    margin-right: 30px;
+}
+
+/*------------------------------------------------*/
+
+.elementor__app{
+    background-color: var(--color-sec-2);
+    display: flex;
+    justify-content: center;
+}
+
+.content__app>img{
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/*-----------------------------------------------*/
+
+.elementor__directory{
+    max-width: 100%;
+    overflow: hidden;
+    margin: auto;
+}
+
+.content__directory{
+    margin: 140px auto 0 auto;
+    padding: 15px 0;
+}
+
+.content__directory>span{
+    color: var(--color-main);
+}
+
+.content__directory>span>a{
+    transition: all ease .4s;
+    color: var(--color-main);
+}
+
+.content__directory>span>a:hover{
+    transform: scale(.94);
+    color: var(--color-sec-3);
+}
+
+
+/*-----------------------------------------------*/
+
+.elementor__header-cart{
+    max-width: 100%;
+    overflow: hidden;
+    margin: auto;
+    padding: 0 20px;
+    border-bottom: 1px solid var(--color-gray-2);
+}
+
+.content__header-cart{
+    margin: 170px auto 0 auto;
+    padding: 20px;
+}
+
+.content__header-cart>h1{
+    margin-bottom: 20px;
+}
+
+.content__header-cart>a{
+    color: var(--color-sec-2);
+    transition: all ease .4s;
+}
+
+.content__header-cart>a:hover{
+    transform: scale(.94);
+}
+
+/*************************************************/
+
+.content__products-similar{
+    margin: auto;
+    width: max-content;
+}
+
+.elements__header-text{
+    padding-top: 10px;
+    padding-bottom: 30px;
+}

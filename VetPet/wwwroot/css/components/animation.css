@@ -1,0 +1,17 @@
+
+/*#### ANIMATIONS ####*/
+
+@keyframes an-fading {
+    
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+
+}
+
+
+

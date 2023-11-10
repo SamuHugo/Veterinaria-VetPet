@@ -1,0 +1,53 @@
+.container__form{
+    text-align: center;
+}
+
+.content__form{
+    width: 500px;
+    margin: auto;
+    text-align: center;
+}
+
+.input-custom{
+    width: 470px;
+    height: 45px;
+    padding: 0 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: var(--color-gray-2);
+    color: var(--color-gray);
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    transition: all .4s ease-in;
+}
+
+.input-select{
+    background-color: var(--color-gray-2);
+    -webkit-appearance: none;
+    width: 500px;
+}
+
+::-webkit-datetime-edit-month-field { color: var(--color-gray);}
+::-webkit-datetime-edit-day-field { color: var(--color-gray); }
+::-webkit-datetime-edit-year-field { color: var(--color-gray); }
+
+.input-custom:focus,
+.txt-custom:focus{
+    background-color: var(--color-gray-3);
+}
+
+.input-custom::placeholder,
+.option-disable-custom{
+    color: var(--color-form-text);
+}
+
+.input-number::-webkit-inner-spin-button,
+.input-number::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: auto;
+}
+
+.input-number{
+    -moz-appearance: textfield;
+}

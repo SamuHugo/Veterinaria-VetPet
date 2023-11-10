@@ -1,0 +1,115 @@
+/*----- ICON SYSTEM ----*/
+
+.icon-add-cart{
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 10px 20px 10px 5px;
+    background-image: url(../../img/base/icons/buttons/icon-shop-cart.png);
+    background-size: 24px;
+}
+
+.icon-add{
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 10px 20px 10px 5px;
+    background-image: url(../../img/base/icons/buttons/icon-plus.png);
+    background-size: 24px;
+}
+
+.icon-delete{
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 10px 20px 10px 5px;
+    background-image: url(../../img/base/icons/buttons/icon-delete.png);
+    background-size: 24px;
+}
+
+.icon-edit{
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 10px 20px 10px 5px;
+    background-image: url(../../img/base/icons/buttons/icon-edit.png);
+    background-size: 24px;
+}
+
+.icon-cancel{
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 10px 20px 10px 5px;
+    background-image: url(../../img/base/icons/buttons/icon-cancel.png);
+    background-size: 24px;
+}
+
+.icon-info{
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 10px 20px 10px 5px;
+    background-image: url(../../img/base/icons/buttons/icon-info.png);
+    background-size: 24px;
+}
+
+.icon-exit{
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 10px 20px 10px 5px;
+    background-image: url(../../img/base/icons/buttons/icon-exit.png);
+    background-size: 24px;
+}
+
+.icon_bar-sign-in{
+    background-image: url(../../img/base/icons/buttons/icon-user.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 10px 20px 10px 5px;
+    background-size: 24px;
+}
+
+.icon_nav-search{
+    background-image: url(../../img/base/icons/nav/icon-nav-search.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 10px 20px 10px 5px;
+    background-size: 30px;
+}
+
+.icon_nav-cart{
+    background-image: url(../../img/base/icons/nav/icon-nav-cart.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 10px 20px 10px 5px;
+    background-size: 30px;
+}
+
+.icon_nav-user{
+    background-image: url(../../img/base/icons/nav/icon-nav-user.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 10px 20px 10px 5px;
+    background-size: 30px;
+}
+
+.icon-user-option{
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 10px 20px 10px 7px;
+    background-image: url(../../img/base/system/user-dades.png);
+    background-size: 38px;
+}
+
+.icon-key-option{
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 10px 20px 10px 5px;
+    background-image: url(../../img/base/system/user-key.png);
+    background-size: 34px;
+}
+
+.icon-check-lg{
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 10px 20px 10px 5px;
+    background-image: url(../../img/base/system/icon-check-large.png);
+    background-size: 50px;
+}
+
+/*----- ICON RED SOCIAL ----*/
