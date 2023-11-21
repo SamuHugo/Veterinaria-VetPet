@@ -17,35 +17,73 @@
         <!--NAV BAR - STORE-->
         <div class="container-header">
             <header id="nav" class="header-nav">
-                <a class="container-logo" asp-area="" asp-controller="Home" asp-action="Index">
-                    <div id="logo-nav" class="nav-logo"></div>
+                <a class="container-logo" href="#PAGINA PRINCIPAL">
+                    <div id="logo-nav" class="nav-logo-store"></div>
                 </a>
 
                 <nav class="nav-main">
                     <ul id="links" class="nav-list">
-                        <li><a class="nav-active" asp-area="" asp-controller="Home" asp-action="Index">INICIO</a></li>
-                        <li><a href="#">SERVICIOS VETERINARIOS</a></li>
-                        <li><a class="btn-nav" href="#">ESPECIALIDADES</a></li>
-                        <li><a class="color-store" href="#">TIENDA PET</a></li>
+                        <li><a class="nav-active" href="#">INICIO</a></li>
+                        <li><a href="#">PERROS</a></li>
+                        <li><a href="#">GATOS</a></li>
+                        <li>
+                            <a class="" href="#">MARCAS<i class="fa-solid fa-angle-down i-style"></i></a>
+                            <ul class="nav-sub-list">
+                                <li><a href="">RICOCAN</a></li>
+                                <li><a href="">PURINA</a></li>
+                                <li><a href="">RICOCAN</a></li>
+                                <li><a href="">RICOCAN</a></li>
+                                <li><a href="">RICOCAN</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="" href="#">FARMACOS</a></li>
+                        <li><a class="" href="#">SERVICIOS</a></li>
                         <li><a class="" href="#">CONOCENOS</a></li>
                     </ul>
+                    <div class="nav-bar__icons">
+                        <div class="nav-bar__icons-func">
+                            <a href="#"><i class="icon_nav-search"></i></a>
+                        </div>
+                        <div class="nav-bar__icons-func">
+                            <a href="#"><i class="icon_nav-cart"></i></a>
+                        </div>
+                    </div>
                     <div class="bar__sign-in">
                         <label for="btn-user" class="btn btn-main"><i class="icon_bar-sign-in"></i> INICIAR SESION</label>
                     </div>
                     <input type="checkbox" checked id="btn-user">
                     <div class="container-card__sign-in">
                         <div class="content-card__sign-in text-center">
-                            <p class="title-sm">Hola, Bienvenido</p>
+                            <h2 class="title-sm">Hola, Bienvenido</h2>
                             <div class="content-buttons">
-                                <button class="btn-s btn-main">Iniciar Sesión</button>
-                                <button href="" class="btn-s btn-dark-2">Registrate</button>
+                                <a href="" class="btn-s btn-main">Iniciar Sesión</a>
+                                <a href="" class="btn-s btn-dark-2">Registrate</a>
                             </div>
                         </div>
                     </div>
                 </nav>
+
+
             </header>
         </div>
+
+        <!--BAR OPTIONS-->
+        <div class="container__bar-options">
+            <div class="content__bar-options">
+                <div class="bar-options p-m-sm">
+                    <a href="">Promociones</a>
+                    <a href="">Ofertas en Alimentos</a>
+                    <a href="">Collares</a>
+                    <a href="">Peces</a>
+                    <a href="">Descuentos</a>
+                    <a href="">Salud e Higiene</a>
+                    <a href="">Ropa Top</a>
+                    <a href="">Rastreadores VetPet</a>
+                </div>
+            </div>
+        </div>
     </div>
+
 
     <div>
         <main role="main">
@@ -59,7 +97,7 @@
 
                 <div class="footer-box">
                     <div class="footer-logo">
-                        <a asp-area="" asp-controller="Home" asp-action="Index"><img src="~/img/base/logos/logo-vetpet.png" alt="logo"></a>
+                        <a asp-area="" asp-controller="Home" asp-action="Index"><img src="~/img/base/logos/logo-store.png" alt="logo"></a>
                     </div>
                     <p class="footer-description">"La felicidad no se compra, se saca a pasear."</p>
                 </div>

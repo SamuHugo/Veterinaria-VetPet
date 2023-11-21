@@ -280,6 +280,16 @@ namespace VetPet.Controllers
                 .ToList();
             return View(productos);
         }
+
+        public IActionResult Holas()
+        {
+            var productos = _context.Producto
+                .Include(p => p.Marca)
+                .Include(p => p.Categoria)
+                .Include(p => p.TipoAnimal)
+                .ToList();
+            return View(productos);
+        }
         public ActionResult Details(int id)
         {
 
