@@ -12,6 +12,10 @@
             <p>Precio: $@producto.Precio</p>
             <p>Stock: @producto.Stock</p>
             <a href="@Url.Action("Details", "Producto", new { id = producto.Id })">Detalles</a>
+
+           
+            <input type="submit" value="Añadir al Carrito" class="btn btn-danger" />
+
         </div>
     }
 </div>
@@ -47,3 +51,5 @@
         border: 1px solid #ddd;
     }
 </style>
+
+     

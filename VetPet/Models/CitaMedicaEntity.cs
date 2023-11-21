@@ -8,6 +8,7 @@ namespace VetPet.Models
         [Key]
         public int Id { get; set; }
         public string Motivo { get; set; }
+        public string NombreContacto { get; set; }   
         public SedeClinicaEntity SedeClinica { get; set; }
 
         public EspecialidadEntity Especialidad { get; set; }

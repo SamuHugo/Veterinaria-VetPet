@@ -1,0 +1,95 @@
+﻿@model VetPet.Models.CitaMedicaEntity
+
+<h2 class="titulo">Crear Nueva Cita</h2>
+
+<div class="form-container">
+    <form asp-action="Create" method="post" enctype="multipart/form-data">
+
+        <!-- NombreContacto -->
+        <div class="form-group">
+            <label asp-for="NombreContacto">Contacto</label>
+            <input asp-for="NombreContacto" class="form-control" required>
+        </div>
+
+        <!-- Motivo -->
+        <div class="form-group">
+            <label asp-for="Motivo">Motivo</label>
+            <input asp-for="Motivo" class="form-control" required>
+        </div>
+        <!-- DetalleCita -->
+        <div class="form-group">
+            <label asp-for="DetalleCita">DetalleCita</label>
+            <input asp-for="DetalleCita" class="form-control" required>
+        </div>
+        <!-- TelefContacto -->
+        <div class="form-group">
+            <label asp-for="TelefContacto">TelefonoContacto</label>
+            <input asp-for="TelefContacto" class="form-control" required>
+        </div>
+        <!-- SEDE CLINICA -->
+        <div class="form-group">
+            <label for="SedeClinica">SedeClinica</label>
+            <select asp-for="SedeClinica.Id" class="form-control" required>
+                <option value="">Seleccione una Sede</option>
+                @foreach (var sede in ViewBag.SedeClinica)
+                {
+                    <option value="@sede.Id">@sede.Nombre</option>
+                }
+            </select>
+        </div>
+        <!-- ESPECIALIDAD -->
+        <div class="form-group">
+            <label for="Especialidad">Especialidad</label>
+            <select asp-for="Especialidad.Id" class="form-control">
+                <option value="">Seleccione una Especialidad</option>
+                @foreach (var especialidad in ViewBag.Especialidad)
+                {
+                    <option value="@especialidad.Id">@especialidad.Descripcion</option>
+                }
+            </select>
+        </div>
+        <!-- MEDICO -->
+        <div class="form-group">
+            <label for="Medico">Medico</label>
+            <select asp-for="Medico.Id" class="form-control" required>
+                <option value="">Seleccione el Medico</option>
+                @foreach (var medico in ViewBag.Medico)
+                {
+                    <option value="@medico.Id">@medico.Nombre</option>
+                }
+            </select>
+        </div>
+        <!-- FECHA -->
+
+        <div class="form-group">
+            <div class="form-group">
+                @Html.LabelFor(model => model.FechaCita, "Fecha:")
+                <input type="date" id="Fecha" name="Fecha" class="form-control" />
+                @Html.ValidationMessageFor(model => model.FechaCita, "", new { @class = "text-danger" })
+            </div>           
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Guardar Cita</button>
+            <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+        </div>
+
+        <!-- fgnfgnfgnfgn -->
+
+
+    </form>
+</div>
+
+<style>
+    .titulo {
+        text-align: center;
+        color: blue;
+        margin-bottom: 20px;
+    }
+
+    .form-container {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+</style>
+

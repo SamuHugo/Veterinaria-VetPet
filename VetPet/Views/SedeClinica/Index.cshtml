@@ -1,0 +1,53 @@
+﻿@model List<VetPet.Models.SedeClinicaEntity>
+
+<h2 class="titulo">Mantenimiento de sedes</h2>
+
+<div class="crearnuevo">
+    <a asp-controller="SedeClinica" asp-action="Create" class="btn btn-primary">Crear Nueva</a>
+</div>
+
+<div class="table-container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Direccion</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var sedeclinica in Model)
+            {
+                <tr>
+                    <td>@sedeclinica.Id</td>
+                    <td>@sedeclinica.Direccion</td>
+                    <td>
+                        <a asp-controller="SedeClinica" asp-action="Edit" asp-route-id="@sedeclinica.Id" class="btn btn-info btn-sm crud-button">Editar</a>
+                    </td>
+                    <td>
+                        <a asp-controller="SedeClinica" asp-action="Delete" asp-route-id="@sedeclinica.Id" class="btn btn-danger btn-sm crud-button">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<style>
+    .titulo {
+        text-align: center;
+        color: blue;
+        margin-bottom: 20px;
+    }
+
+    .crearnuevo {
+        text-align: left;
+        margin-bottom: 10px;
+    }
+
+    .crud-button {
+        margin-left: 5px;
+    }
+</style>

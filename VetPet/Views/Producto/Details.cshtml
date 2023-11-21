@@ -14,7 +14,7 @@
         <p>Stock: @Model.Stock</p>
     </div>
     <div class="product-image">
-        <img src="~/img/@Model.Imagen" alt="Imagen del Producto" />
+        <img src="~/img/@Model.Imagen" alt="Imagen del Producto" width="500" height="300"/>
     </div>
 </div>
 <style>
@@ -30,7 +30,8 @@
 .product-image {
     flex: 1;
     padding: 20px; 
-    text-align: center; 
+    text-align: center;
+    border-radius: 12%;
 }
 
 </style>

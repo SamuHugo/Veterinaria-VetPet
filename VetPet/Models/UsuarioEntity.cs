@@ -18,7 +18,7 @@ namespace VetPet.Models
         public string Telefono { get; set; }    
 
         public string Direccion { get; set; }
-        public ICollection<GeneroEntity> Genero { get; set; }
+        public GeneroEntity Genero { get; set; }
         public DateTime FechaNacimiento { get; set; }
         public string Correo { get; set; }  
         public string Contrasena { get; set; }
@@ -26,20 +26,6 @@ namespace VetPet.Models
         public ICollection<MascotaEntity> Mascota { get; set;}
 
         public ICollection<CitaMedicaEntity> CitaMedica { get; set;}
-        /*
-         USUARIO
-ID USUARIO
-IMAGEN
-NOMBRES
-APELLIDO
-ID TIPO DOCUMENTO
-N° DOCUMENTO
-TELEFONO
-DIRECCIÓN
-ID GENERO
-FECHA DE NACIMIENTO
-CORREO
-CONTRASEÑA
-*/
+ 
     }
 }

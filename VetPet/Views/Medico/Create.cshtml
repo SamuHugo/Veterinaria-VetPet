@@ -1,0 +1,151 @@
+﻿@model VetPet.Models.MedicoEntity
+
+<h2 class="titulo">Crear Nuevo Médico</h2>
+
+<div class="form-container">
+    <form asp-action="Create" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label asp-for="Nombre">Nombre</label>
+            <input asp-for="Nombre" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Apellido">Apellido</label>
+            <input asp-for="Apellido" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="NumeroDocumento">Numero de Documento</label>
+            <textarea asp-for="NumeroDocumento" class="form-control" rows="4" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="TipoDocumento">Tipo de Documento</label>
+            <select asp-for="TipoDocumento.Id" class="form-control" required>
+                <option value="">Seleccione un tipo de Documento</option>
+                @foreach (var tipodocumento in ViewBag.TipoDocumento)
+                {
+                    <option value="@tipodocumento.Id">@tipodocumento.Descripcion</option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="SedeClinica">Sede Clinica</label>
+            <select asp-for="SedeClinica.Id" class="form-control">
+                <option value="">Seleccione una Sede</option>
+                @foreach (var sedeclinica in ViewBag.SedeClinica)
+                {
+                    <option value="@sedeclinica.Id">@sedeclinica.Nombre</option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="Genero">Genero</label>
+            <select asp-for="Genero.Id" class="form-control" required>
+                <option value="">Seleccione un Género</option>
+                @foreach (var genero in ViewBag.Genero)
+                {
+                    <option value="@genero.Id">@genero.Descripcion</option>
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="EstadoCivil">Estado Civil</label>
+            <select asp-for="EstadoCivil.Id" class="form-control" required>
+                <option value="">Seleccione un Estado Civil</option>
+                @foreach (var estadocivil in ViewBag.EstadoCivil)
+                {
+                    <option value="@estadocivil.Id">@estadocivil.Descripcion</option>
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="Especialidad">Especialidad</label>
+            <select asp-for="Especialidad.Id" class="form-control" required>
+                <option value="">Seleccione una Especialidad</option>
+                @foreach (var especialidad in ViewBag.Especialidad)
+                {
+                    <option value="@especialidad.Id">@especialidad.Descripcion</option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Telefono1">Telefono 1</label>
+            <input asp-for="Telefono1" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Telefono2">Telefono 2</label>
+            <input asp-for="Telefono2" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Direccion">Direccion</label>
+            <input asp-for="Direccion" type="text" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label asp-for="DescripProfesional">Descripcion Profesional</label>
+            <input asp-for="DescripProfesional" type="text" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label asp-for="Correo">Correo</label>
+            <input asp-for="Correo" type="text" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label asp-for="Contrasena">Contraseña</label>
+            <input asp-for="Contrasena" type="text" class="form-control" required>
+        </div>
+
+
+        <div class="form-group">
+            <label asp-for="Imagen">Imagen del Producto</label>
+            <input asp-for="Imagen" type="file" class="form-control-file" id="imagenInput" accept="image/*">
+            <div id="imagenPreviewContainer" style="display: none;">
+                <img id="imagenPreview" src="#" alt="Vista previa de la imagen" style="max-width: 200px; max-height: 200px;" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Guardar Producto</button>
+            <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>
+
+<style>
+    .titulo {
+        text-align: center;
+        color: blue;
+        margin-bottom: 20px;
+    }
+
+    .form-container {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+</style>
+
+<script>
+    document.getElementById("imagenInput").addEventListener("change", function () {
+        var fileInput = this;
+        var imgPreviewContainer = document.getElementById("imagenPreviewContainer");
+        var imgPreview = document.getElementById("imagenPreview");
+
+        if (fileInput.files && fileInput.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                imgPreview.src = e.target.result;
+                imgPreviewContainer.style.display = "block";
+            };
+
+            reader.readAsDataURL(fileInput.files[0]);
+        } else {
+            imgPreview.src = "";
+            imgPreviewContainer.style.display = "none";
+        }
+    });
+</script>

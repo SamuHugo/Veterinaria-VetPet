@@ -14,7 +14,7 @@ namespace VetPet.Models
 
         public RazaEntity Raza { get; set; }
 
-        public ICollection<GeneroEntity> Genero { get; set; }
+        public GeneroEntity Genero { get; set; }
 
         public DateTime FechaAdopcion { get; set; }
         public string Descripcion { get; set; } 

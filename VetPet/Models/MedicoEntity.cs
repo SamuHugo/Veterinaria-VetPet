@@ -13,7 +13,7 @@ namespace VetPet.Models
         public string Nombre { get; set; }
         public string Apellido { get; set;}
 
-        public ICollection<TipoDocumentoEntity> TipoDocumentos { get; set; }
+        public TipoDocumentoEntity TipoDocumento { get; set; }
 
         public string NumeroDocumento { get; set; }
 
@@ -23,15 +23,15 @@ namespace VetPet.Models
 
         public int SedeClinicaId { get; set; }
 
-        public SedeClinicaEntity SedeClinicaEntity { get; set; }
+        public SedeClinicaEntity SedeClinica { get; set; }
 
-        public ICollection<GeneroEntity> Genero { get; set; }    
+        public GeneroEntity Genero { get; set; }    
         
         public DateTime FechaNacimiento { get; set; }
 
-        public ICollection<EstadoCivilEntity> EstadoCivil { get; set; }
+        public EstadoCivilEntity EstadoCivil { get; set; }
 
-        public EspecialidadEntity EspecialidadEntity { get; set;}
+        public EspecialidadEntity Especialidad { get; set;}
 
         public string DescripProfesional { get; set; }
         public string Correo { get; set; }  
@@ -43,26 +43,5 @@ namespace VetPet.Models
 
         public HistorialMedicoEntity HistorialMedico { get; set;}
 
-
-
-/*MEDICO 
-ID MEDICO
-IMAGEN
-NOMBRES
-APELLIDO
-ID TIPO DOCUMENTO
-N° DOCUMENTO
-TELEFONO 1
-TELEFONO 2
-DIRECCIÓN
-ID SEDE CLINICA
-ID GENERO
-FECHA DE NACIMIENTO
-ID ESTADO CIVIL
-ID ESPECIALIDAD
-DESCRIPCIÓN PROFESIONAL
-CORREO
-CONTRASEÑA
-*/
     }
 }

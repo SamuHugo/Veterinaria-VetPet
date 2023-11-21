@@ -19,7 +19,6 @@ namespace VetPet.Controllers
             return View(categorias);
         }
 
-        [HttpGet]
         public IActionResult Create()
         {
             return View();
@@ -80,7 +79,7 @@ namespace VetPet.Controllers
             return View(model);
         }
 
-        // Borrar Alumnos
+        // Borrar Categoria
         [HttpGet]
         public IActionResult Delete(int id)
         {

@@ -1,0 +1,102 @@
+﻿@model VetPet.Models.MedicoEntity
+
+<h2 class="titulo">Editar Medico</h2>
+
+<div class="form-container">
+    <form asp-action="Edit" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <img src="~/img/@Model.Imagen" alt="Imagen del producto" style="max-width: 100px; max-height: 100px" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Nombre">Nombre</label>
+            <input asp-for="Nombre" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Apellido">Apellido</label>
+            <input asp-for="Apellido" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="NumeroDocumento">Número de Documento</label>
+            <textarea asp-for="NumeroDocumento" class="form-control" rows="4" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="TipoDocumento.Id">Marca</label>
+            <select asp-for="TipoDocumento.Id" asp-items="ViewBag.TipoDocumento" class="form-control"></select>
+</div>
+
+<div class="form-group">
+            <label for="SedeClinica.Id">Categoría</label>
+            <select asp-for="SedeClinica.Id" asp-items="ViewBag.SedeClinica" class="form-control"></select>
+</div>
+
+<div class="form-group">
+            <label for="Genero.Id">Tipo de Animal</label>
+            <select asp-for="Genero.Id" asp-items="ViewBag.Genero" class="form-control"></select>
+</div>
+        <div class="form-group">
+            <label for="EstadoCivil.Id">Tipo de Animal</label>
+            <select asp-for="EstadoCivil.Id" asp-items="ViewBag.EstadoCivil" class="form-control"></select>
+        </div>
+        <div class="form-group">
+            <label for="Especialidad.Id">Tipo de Animal</label>
+            <select asp-for="Especialidad.Id" asp-items="ViewBag.Especialidad" class="form-control"></select>
+        </div>
+
+
+        <div class="form-group">
+            <label asp-for="Telefono1">Telefono1 (Código de Item)</label>
+            <input asp-for="Telefono1" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Telefono2">Telefono2</label>
+            <input asp-for="Telefono2" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Direccion">Direccion</label>
+            <input asp-for="Direccion" type="text" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label asp-for="DescripProfesional">Descripcion Profesional</label>
+            <input asp-for="DescripProfesional" type="text" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label asp-for="Correo">Correo</label>
+            <input asp-for="Correo" type="text" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label asp-for="Contrasena">Contraseña</label>
+            <input asp-for="Contrasena" type="text" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+            <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>
+
+<style>
+    .titulo {
+        text-align: center;
+        color: blue;
+        margin-bottom: 20px;
+    }
+
+    .form-container {
+        max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .form-group {
+        flex-basis: 45%;
+    }
+</style>
