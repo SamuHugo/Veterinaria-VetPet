@@ -1,0 +1,74 @@
+﻿@model VetPet.Models.CitaMedicaEntity
+
+<h2>Edit Cita</h2>
+
+<form asp-action="Edit" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label asp-for="Motivo" class="control-label"></label>
+        <input asp-for="Motivo" class="form-control" />
+        <span asp-validation-for="Motivo" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="NombreContacto" class="control-label"></label>
+        <input asp-for="NombreContacto" class="form-control" />
+        <span asp-validation-for="NombreContacto" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="SedeClinica" class="control-label"></label>
+        <select asp-for="SedeClinica.Id" asp-items="@(new SelectList(ViewBag.SedeClinica, "Id", "Nombre", Model.SedeClinica?.Id))" class="form-control"></select>
+        <span asp-validation-for="SedeClinica" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Especialidad" class="control-label"></label>
+        <select asp-for="Especialidad.Id" asp-items="@(new SelectList(ViewBag.Especialidad, "Id", "Descripcion", Model.Especialidad?.Id))" class="form-control"></select>
+        <span asp-validation-for="Especialidad" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Medico" class="control-label"></label>
+        <select asp-for="Medico.Id" asp-items="@(new SelectList(ViewBag.Medico, "Id", "Nombre", Model.Medico?.Id))" class="form-control"></select>
+        <span asp-validation-for="Medico" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Usuario" class="control-label"></label>
+        <select asp-for="Usuario.Id" asp-items="@(new SelectList(ViewBag.Usuario, "Id", "Apellido", Model.Usuario?.Id))" class="form-control"></select>
+        <span asp-validation-for="Usuario" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="FechaCita" class="control-label"></label>
+        <input asp-for="FechaCita" class="form-control" />
+        <span asp-validation-for="FechaCita" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="TelefContacto" class="control-label"></label>
+        <input asp-for="TelefContacto" class="form-control" />
+        <span asp-validation-for="TelefContacto" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DetalleCita" class="control-label"></label>
+        <textarea asp-for="DetalleCita" class="form-control"></textarea>
+        <span asp-validation-for="DetalleCita" class="text-danger"></span>
+    </div>
+
+    <!-- Agrega más propiedades según sea necesario -->
+
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" />
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -34,8 +34,8 @@ namespace VetPet.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            ViewBag.TipoDocumento = _context.Marca.ToList();
-            ViewBag.SedeClinica = _context.Categoria.ToList();
+            ViewBag.TipoDocumento = _context.TipoDocumento.ToList();
+            ViewBag.SedeClinica = _context.SedeClinica.ToList();
             ViewBag.Genero = _context.Genero.ToList();
             ViewBag.EstadoCivil = _context.EstadoCivil.ToList();
             ViewBag.Especialidad = _context.Especialidad.ToList();
@@ -230,6 +230,7 @@ namespace VetPet.Controllers
                 medico.Nombre = model.Nombre;
                 medico.Apellido = model.Apellido;
                 medico.NumeroDocumento = model.NumeroDocumento;
+                medico.FechaNacimiento = model.FechaNacimiento;
                 medico.Telefono1 = model.Telefono1;
                 medico.Telefono2 = model.Telefono2;
                 medico.Direccion = model.Direccion;

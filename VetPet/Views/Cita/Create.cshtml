@@ -55,7 +55,7 @@
                 <option value="">Seleccione el Medico</option>
                 @foreach (var medico in ViewBag.Medico)
                 {
-                    <option value="@medico.Id">@medico.Nombre</option>
+                    <option value="@medico.Id">@medico.Nombre @medico.Apellido</option>
                 }
             </select>
         </div>

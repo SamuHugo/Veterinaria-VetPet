@@ -18,6 +18,7 @@
                 <th>Sede</th>
                 <th>Especialidad</th>
                 <th>Medico</th>
+                <th>Usuario</th>
                 <th>FechaCita</th>
                 <th></th>
                 <th></th>
@@ -32,10 +33,11 @@
                     <td>@citaMedica.Motivo</td>
                     <td>@citaMedica.DetalleCita</td>
                     <td>@citaMedica.TelefContacto</td>
-                    <td>@citaMedica.FechaCita</td>
                     <td>@citaMedica.SedeClinica?.Nombre</td>
                     <td>@citaMedica.Especialidad?.Descripcion</td>
-                    <td>@citaMedica.Medico?.Nombre</td>                  
+                    <td>@citaMedica.Medico?.Nombre @citaMedica.Medico.Apellido</td>
+                    <td>@citaMedica.Usuario?</td>
+                    <td>@citaMedica.FechaCita.ToString("dd/MM/yyyy")</td>
                     <td>
                         <a asp-controller="Cita" asp-action="Edit" asp-route-id="@citaMedica.Id" class="btn btn-info btn-sm crud-button">Editar</a>
                     </td>

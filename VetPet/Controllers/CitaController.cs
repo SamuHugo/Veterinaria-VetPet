@@ -24,6 +24,7 @@ namespace VetPet.Controllers
                             .Include(p => p.SedeClinica)
                             .Include(p => p.Especialidad)
                             .Include(p => p.Medico)
+                            .Include(p =>p.Usuario)
                             .ToList();
             return View(citas);
         }
@@ -35,6 +36,7 @@ namespace VetPet.Controllers
             ViewBag.SedeClinica = _context.SedeClinica.ToList();
             ViewBag.Especialidad = _context.Especialidad.ToList();
             ViewBag.Medico = _context.Medico.ToList();
+            ViewBag.Usuario = _context.Usuario.ToList();    
                 
             return View();
         }
@@ -42,7 +44,7 @@ namespace VetPet.Controllers
         // POST: CitaController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(CitaMedicaEntity model,int sedeclinicaId, int especialidadId, int medicoId)
+        public IActionResult Create(CitaMedicaEntity model)
         {
             if (ModelState.IsValid)
             {
@@ -81,6 +83,105 @@ namespace VetPet.Controllers
                 .ToList();
             return View(model);
         }
-       
+        [HttpGet]
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var cita = _context.CitaMedica
+                .Include(p => p.SedeClinica)
+                .Include(p => p.Especialidad)
+                .Include(p => p.Medico)
+                .FirstOrDefault(c => c.Id == id);
+
+            if (cita == null)
+            {
+                return NotFound();
+            }
+
+            ViewBag.SedeClinica = _context.SedeClinica.ToList();
+            ViewBag.Especialidad = _context.Especialidad.ToList();
+            ViewBag.Medico = _context.Medico.ToList();
+
+            return View(cita);
+        }
+
+        // POST: CitaController/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(int id, CitaMedicaEntity model)
+        {
+            if (id != model.Id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                
+                
+                    model.SedeClinica = _context.SedeClinica.FirstOrDefault(c => c.Id == model.SedeClinica.Id);
+                    model.Especialidad = _context.Especialidad.FirstOrDefault(c => c.Id == model.Especialidad.Id);
+                    model.Medico = _context.Medico.FirstOrDefault(c => c.Id == model.Medico.Id);
+
+                    _context.CitaMedica.Update(model);
+                    _context.SaveChanges();
+                
+                
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.SedeClinica = _context.SedeClinica.ToList();
+            ViewBag.Especialidad = _context.Especialidad.ToList();
+            ViewBag.Medico = _context.Medico.ToList();
+            return View(model);
+        }
+
+        // GET: CitaController/Delete/5
+        [HttpGet]
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var cita = _context.CitaMedica
+                .Include(p => p.SedeClinica)
+                .Include(p => p.Especialidad)
+                .Include(p => p.Medico)
+                .FirstOrDefault(c => c.Id == id);
+
+            if (cita == null)
+            {
+                return NotFound();
+            }
+
+            return View(cita);
+        }
+
+        // POST: CitaController/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeleteConfirmed(int id)
+        {
+            var cita = _context.CitaMedica.Find(id);
+
+            if (cita == null)
+            {
+                return NotFound();
+            }
+
+            _context.CitaMedica.Remove(cita);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
+
     }
 }
+

@@ -1,0 +1,53 @@
+﻿@model List<VetPet.Models.UsuarioEntity>
+
+
+<h2>Lista de Usuarios</h2>
+
+<p>
+    <a asp-action="Create">Crear nuevo usuario</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Imagen</th>
+            <th>Apellido</th>
+            <th>Numero de Documento</th>
+            <th>Telefono</th>
+            <th>Direccion</th>
+            <th>Genero</th>
+            <th>Fecha de Nacimiento</th>
+            <th>Correo</th>
+            <th>Contraseña</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var usuario in Model)
+        {
+            <tr>
+                <td>@usuario.Id</td>
+                 <td>
+                        <img src="~/img/@usuario.Imagen" alt="Imagen del producto" style="max-width: 100px; max-height: 100px" />
+                    </td>
+                <td>@usuario.Apellido</td>
+                <td>@usuario.NumeroDocumento</td>
+                <td>@usuario.Telefono</td>
+                <td>@usuario.Direccion</td>
+                <td>@usuario.Genero.Descripcion</td>
+                <td>@usuario.FechaNacimiento</td>
+                <td>@usuario.Correo</td>
+                <td>@usuario.Contrasena</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@usuario.Id">Editar</a> 
+                    
+                </td>
+                <td>
+                    <a asp-action="Delete" asp-route-id="@usuario.Id">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
