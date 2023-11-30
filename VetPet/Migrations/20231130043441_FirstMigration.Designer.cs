@@ -10,7 +10,7 @@ using VetPet.Database.VetContext;
 namespace VetPet.Migrations
 {
     [DbContext(typeof(VetContext))]
-    [Migration("20231009162303_FirstMigration")]
+    [Migration("20231130043441_FirstMigration")]
     partial class FirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -746,7 +746,7 @@ namespace VetPet.Migrations
             modelBuilder.Entity("VetPet.Models.ProductoEntity", b =>
                 {
                     b.HasOne("VetPet.Models.CategoriaEntity", "Categoria")
-                        .WithMany("Productos")
+                        .WithMany("Producto")
                         .HasForeignKey("CategoriaId");
 
                     b.HasOne("VetPet.Models.MarcaEntity", "Marca")

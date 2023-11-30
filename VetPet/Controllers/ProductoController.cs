@@ -298,5 +298,14 @@ namespace VetPet.Controllers
             return View(producto);
         }
 
+        public ActionResult TarjetaForm()
+        {
+            return View();
+        }
+
+        public ActionResult ConfirmacionCompra()
+        {
+            return View();
+        }
     }
 }
