@@ -1,0 +1,96 @@
+.container__activities,
+.container__request,
+.container__options-user{
+    width: 100%;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.content__activities,
+.content__request,
+.content__options-user{
+    margin: auto;
+    width: 1000px;
+}
+
+.content__activities h1,
+.content__request h1,
+.content__options-user h1{
+    padding: 40px 0 25px 0;
+    color: var(--color-main);
+}
+
+.container-activities__box,
+.container-request__box{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 5%;
+
+}
+
+.container-activities__box a,
+.container-request__box a{
+    color: var(--color-main);
+    transition: all ease .4s;
+}
+
+.container-activities__box>a:hover,
+.container-request__box>a:hover{
+    transform: scale(.94);
+}
+
+.container-request__box>a:first-of-type>.request__box{
+    width: 610px;
+    background-color: aqua;
+}
+
+.activities__box,
+.request__box{
+    width: 280px;
+    height: 280px;
+    border-radius: 30px;
+    background-color: var(--color-gray-2);
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content__options-user{
+    margin-bottom: 100px;
+}
+
+.container__options-account a>.options-account{
+    transition: all ease .4s;
+}
+
+.container__options-account a>.options-account:hover{
+    transform: scale(.94);
+}
+
+.container__options-account>button{
+    margin-top: 30px;
+    padding: 20px 30px;
+}
+
+.options-account{
+    width: 600px;
+    height: 70px;
+    padding: 0 15px;
+    display: flex;
+    background-color: var(--color-gray-2);
+    border-radius: 15px;
+}
+
+
+.options-account>p{
+    margin-left: 8px;
+    color: var(--color-main);
+    line-height: 70px;
+}
+
+.options-account:last-of-type{
+    margin-top: 20px;
+}

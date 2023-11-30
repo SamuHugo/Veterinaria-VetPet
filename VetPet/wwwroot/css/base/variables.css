@@ -1,0 +1,43 @@
+:root {
+    /*-------- COLORS ---------*/
+    --color-main: #352E58;
+
+
+    /*color web main*/
+    --color-pri-1: #0f3587;
+    --color-pri-2: #256DC1;
+    --color-pri-3: #349FBB;
+    --color-pri-4: #0f41af;
+
+
+    /*color web store*/
+    --color-sec-1: #F50057;
+    --color-sec-2: #923794;
+    --color-sec-3: #F44F4F;
+
+
+    /*color text*/
+    --color-title: #161517;
+    --color-p: #2B2B2D;
+
+
+    /*color alt*/
+    --color-red: #A82635;
+    --color-red-2: #D80A23;
+    --color-green: #95E233;
+    --color-yellow: #E4DC0F;
+    --color-gray: #6F7077;
+    --color-gray-2: #EFEFEF;
+    --color-gray-3: #eae8e8;
+    --color-white: #FFFFFF;
+    --color-white-2: #f1f1f1;
+    --color-white-3: #f6f6f6;
+
+
+    /*shadows*/
+    --shadow-1: 0px 0px 8px 0px rgba(0, 0, 0, 0.30);
+    --shadow-2: 0px 0px 6px 0px rgba(0, 0, 0, 0.15);
+    --text-shadow: 0 0 6px rgba(0, 0, 0, 0.30);
+    --text-shadow-2: 0 0 8px rgba(0, 0, 0, 0.15);
+}
+

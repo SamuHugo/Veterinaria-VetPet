@@ -1,0 +1,215 @@
+.nav__bar-options{
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    background-color: var(--color-white);
+}
+
+.container-header{
+    width: 95%;
+    background-color: var(--color-white);
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-nav{
+    width: 100%;
+    height: 70px;
+    display: inline-flex;
+    align-items: center;
+    border-bottom: 1px var(--color-gray-2) solid;
+    justify-content: space-between;
+    position: relative;
+}
+
+.nav-main{
+    display: flex;
+    line-height: 70px;
+}
+
+.container-logo{
+    margin: auto 0;
+}
+
+.nav-logo,
+.nav-logo-store{
+    width: 138px;
+    height: 52px;
+    margin: auto 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.nav-logo{
+    background-image: url(../../img/base/logos/logo-vetpet.PNG);
+}
+
+.nav-logo-store{
+    background-image: url(../../img/base/logos/logo-store.PNG);
+}
+
+
+.nav-list{
+    display: flex;
+}
+
+.nav-list li{
+    position: relative;
+}
+
+.nav-list li a{
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 0 12px;
+    display: block;
+    color: var(--color-main);
+    transition: all ease .4s;
+}
+
+.nav-list li a:hover{
+    transform: scale(.94);
+    color: var(--color-pri-1);
+}
+
+.i-style{
+    font-size: 14px;
+    margin-left: 3px;
+}
+
+.color-store{
+    color: var(--color-sec-3) !important;
+}
+
+.nav-sub-list{
+    position: absolute;
+    left: 0;
+    top: 50px;
+    width: 200px;
+    padding-bottom: 15px;
+    background: var(--color-white);
+    display: none;
+    border-radius: 10px;
+    box-shadow: var(--shadow-1);
+    animation-name: an-fading;
+    animation-duration: .5s;
+}
+
+.nav-sub-list li{
+    width: 80%;
+    padding-left: 30px;
+}
+
+.nav-sub-list li a{
+    text-transform: uppercase;
+    color: var(--color-main);
+    height: 55px;
+}
+
+.nav-sub-list li a:hover{
+    color: var(--color-sec-1);
+}
+
+.nav-list li:focus-within > .nav-sub-list,
+.nav-list li:hover > .nav-sub-list{
+    display: initial;
+}
+
+.bar__sign-in{
+    width: max-content;
+    margin-left: 20px;
+    transition: all ease .4s;
+}
+
+
+.bar__sign-in:hover{
+    transform: scale(.95);
+}
+
+.bar__sign-in>label{
+    text-align: center;
+    color: var(--color-white);
+    background-color: var(--color-main);
+    padding: 15px 15px;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 16px;
+    text-align: center;
+    line-height: 70px;
+    z-index: 100;
+}
+
+.bar__sign-in>label>a>i{
+    margin-right: 6px;
+}
+
+.nav-bar__icons{
+    line-height: 70px;
+    margin-left: 20px;
+    margin-right: 5px;
+    display: inline-flex;
+}
+
+.nav-bar__icons>a{
+    margin: 0 8px; 
+}
+
+.nav-bar__icons-func{
+    transition: all ease .4s;
+}
+
+.nav-bar__icons-func:first-of-type{
+    margin-right: 20px;
+}
+
+.nav-bar__icons-func:hover{
+    transform: scale(.95);
+}
+
+
+
+/*** CARD SING IN ***/
+
+.container-card__sign-in{
+    position: absolute;
+    top: 80px;
+    right: 30px;
+}
+
+.content-card__sign-in{
+    width: 250px;
+    height: 230px;
+    padding: 5px 10px;
+    background-color: var(--color-white);
+    border-radius: 20px;
+    box-shadow: var(--shadow-1);
+    display: block;
+    animation-name: an-fading;
+    animation-duration: .7s;
+}
+
+#btn-user{
+    display: none;
+}
+
+#btn-user:checked ~ .container-card__sign-in{
+    display: none;
+}
+
+.content-buttons{
+    margin-top: 10px;
+}
+
+.content-buttons>a{
+    display: block;
+    margin: auto;
+    width: 115px;
+}
+
+.content-buttons>a:first-of-type{
+    margin-bottom: 10px;
+}
+

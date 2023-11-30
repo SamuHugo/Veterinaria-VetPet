@@ -1,0 +1,41 @@
+@import url(../css/base/elements.css);
+@import url(../css/base/fonts.css);
+@import url(../css/base/icons.css);
+@import url(../css/base/variables.css);
+@import url(../css/base/responsive.css);
+@import url(../css/components/buttons.css);
+@import url(../css/components/text.css);
+@import url(../css/components/nav-bar.css);
+@import url(../css/components/animation.css);
+@import url(../css/components/footer.css);
+@import url(../css/components/form.css);
+@import url(../css/components/table.css);
+@import url(../css/components/card-item.css);
+@import url(../css/components/bar-options.css);
+@import url(../css/components/carrusel.css);
+@import url(../css/components/elementor-grid.css);
+@import url(../css/components/elementor-section.css);
+@import url(../css/components/model-card-slider.css);
+@import url(../css/components/swiper-bundle.css);
+@import url(../css/components/swiper-bundle.min.css);
+@import url(../css/components/elementor-widget.css);
+@import url(../css/components/elementor-header-user.css);
+@import url(../css/components/user-dashboard.css);
+@import url(../css/pages/client.css);
+@import url(../css/pages/tienda-pet-carrito.css);
+@import url(../css/pages/tienda-pet-info-producto.css);
+@import url(../css/pages/tienda-pet-productos.css);
+@import url(../css/pages/tienda-pet.css);
+@import url(../css/pages/index.css)
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    margin: 0;
+    padding: 0;
+    text-transform: none;
+}

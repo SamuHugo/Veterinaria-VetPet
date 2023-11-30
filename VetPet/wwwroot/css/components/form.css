@@ -1,0 +1,109 @@
+
+
+.content__form{
+    width: 500px;
+    margin: auto;
+}
+
+
+.input-custom {
+    width: 500px;
+    height: 45px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: var(--color-gray-2);
+    color: var(--color-gray);
+    font-family: 'Ubuntu', sans-serif;
+    padding: 0 15px;
+    font-weight: 400;
+    font-size: 16px;
+    transition: all .4s ease-in;
+}
+
+.label-custom{
+    color: var(--color-main);
+}
+
+.input-select{
+    background-color: var(--color-gray-2);
+    -webkit-appearance: none;
+    width: 500px;
+}
+
+.textArea-custom{
+    padding: 5px 15px;
+    height: 100px;
+    resize: none;
+}
+
+::-webkit-datetime-edit-month-field { color: var(--color-gray);}
+::-webkit-datetime-edit-day-field { color: var(--color-gray); }
+::-webkit-datetime-edit-year-field { color: var(--color-gray); }
+
+.input-custom:focus,
+.txt-custom:focus{
+    background-color: var(--color-gray-3);
+}
+
+.input-custom::placeholder,
+.option-disable-custom{
+    color: var(--color-form-text);
+}
+
+.input-number::-webkit-inner-spin-button,
+.input-number::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: auto;
+}
+
+.input-number{
+    -moz-appearance: textfield;
+}
+
+
+
+
+.container__form-product {
+    margin: auto;
+    max-width: 1200px;
+}
+
+.container-flex-form {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.img-product{
+    min-width: 500px;
+    margin-left:50px;
+    height: 500px;
+    border: 1px solid var(--color-gray);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.img-product img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.elementor-divider-item {
+    content: "";
+    width: 300px;
+    height: 3px;
+    background-color: var(--color-pri-4);
+    border-radius: 20px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.section__item {
+    margin-bottom: 30px;
+    color: var(--color-main);
+}
+
+.content__item {
+    margin: 40px auto;
+}

@@ -1,0 +1,34 @@
+.slide-container{
+  width: 100%;
+  max-width: 1265px;
+  padding: 40px 0;
+}
+
+.slide-content{
+  margin: 0px 50px 30px 50px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.swiper-navBtn{
+  border-radius: 50%;
+  background-color: var(--color-white);
+}
+
+.swiper-navBtn:hover{
+  color: var(--color-white);
+}
+
+.swiper-next{
+  right: 0;
+}
+.swiper-prev{
+  left: 0;
+}
+.swiper-pagination-bullet{
+  background-color: var(--color-black) !important;
+  opacity: 1;
+}
+.swiper-pagination-bullet-active{
+  background-color: var(--color-primary-1) !important;
+}
