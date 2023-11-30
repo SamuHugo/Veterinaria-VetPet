@@ -321,7 +321,7 @@ namespace VetPet.Controllers
             if (producto == null)
             {
 
-                return RedirectToAction("Tienda");
+                return RedirectToAction("index");
             }
 
             return View(producto);
@@ -333,6 +333,11 @@ namespace VetPet.Controllers
         }
 
         public ActionResult ConfirmacionCompra()
+        {
+            return View();
+        }
+
+        public ActionResult Carrito()
         {
             return View();
         }
