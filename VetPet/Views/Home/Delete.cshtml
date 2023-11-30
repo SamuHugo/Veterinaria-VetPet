@@ -1,0 +1,13 @@
+﻿@model VetPet.Models.Admin
+
+<h2>Confirmar Eliminación</h2>
+
+<p>¿Estás seguro de que quieres borrar la siguiente ADMIN?</p>
+<p><strong>@Model.nombres @Model.apePaterno @Model.apeMaterno </strong></p>
+
+<form asp-action="ConfirmedDelete">
+    <input type="hidden" asp-for="Id" />
+    
+    <button type="submit" class="btn btn-danger">Sí, Borrar</button>
+    <a asp-action="Admins" class="btn btn-secondary">Cancelar</a>
+</form>

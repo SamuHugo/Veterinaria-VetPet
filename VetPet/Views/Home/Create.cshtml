@@ -1,0 +1,43 @@
+﻿@model VetPet.Models.Admin
+
+<h2>Crear Nuevo Administrador</h2>
+
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="nombres" class="control-label">Nombres:</label>
+        <input asp-for="nombres" class="form-control" />
+        <span asp-validation-for="nombres" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="apePaterno" class="control-label">Apellido Paterno:</label>
+        <input asp-for="apePaterno" class="form-control" />
+        <span asp-validation-for="apePaterno" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="apeMaterno" class="control-label">Apellido Materno:</label>
+        <input asp-for="apeMaterno" class="form-control" />
+        <span asp-validation-for="apeMaterno" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="correo" class="control-label">Correo Electrónico:</label>
+        <input asp-for="correo" class="form-control" />
+        <span asp-validation-for="correo" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="contraseña" class="control-label">Contraseña:</label>
+        <input asp-for="contraseña" class="form-control" />
+        <span asp-validation-for="contraseña" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Crear" class="btn btn-primary" />
+    </div>
+</form>
+
+<a asp-action="Admins" class="btn btn-secondary">Volver al Listado</a>

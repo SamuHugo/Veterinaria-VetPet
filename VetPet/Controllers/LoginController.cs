@@ -1,6 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using VetPet.Database.VetContext;
 using VetPet.Models;
 
@@ -20,21 +24,35 @@ namespace VetPet.Controllers
         }
         private bool ValidarUsuario(string correo, string contraseña)
         {
-            // Se verifica si el usuario existe en la BD
             var admin = _context.Admins.FirstOrDefault(a => a.correo == correo);
 
-            if (admin != null)
+            if (admin != null && admin.contraseña == contraseña)
             {
+                // Configurar la cookie de autenticación
+                var claims = new List<Claim>
+        {
+            new Claim(ClaimTypes.Name, admin.nombres),
+            // Otros reclamos según sea necesario
+        };
 
-                // Verifica si la contraseña coincide
-                if (admin.contraseña == contraseña)
+                var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+
+                var authProperties = new AuthenticationProperties
                 {
-                    return true; // Datos correctos
-                }
+                    // Puedes configurar propiedades adicionales si es necesario
+                };
+
+                HttpContext.SignInAsync(
+                    CookieAuthenticationDefaults.AuthenticationScheme,
+                    new ClaimsPrincipal(claimsIdentity),
+                    authProperties);
+
+                return true;
             }
 
-            return false; // Datos inválidos
+            return false;
         }
+
         [HttpPost]
         public IActionResult Index(string correo, string contraseña)
         {

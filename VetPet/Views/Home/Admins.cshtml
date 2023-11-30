@@ -2,27 +2,78 @@
 
 <h2>Listado de Administradores</h2>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Nombres</th>
-            <th>Apellidos</th>
-            <th>Correo Electrónico</th>
-            <th>Contraseña</th>
-            
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var admin in Model)
-        {
-            <tr>
+<div class="crearnuevo">
+    <!-- Puedes agregar un enlace para crear un nuevo administrador si es necesario -->
+    <a asp-controller="Home" asp-action="Create" class="btn btn-primary">Crear Nuevo</a>
+</div>
 
-                <td>@admin.nombres</td>
-                <td> @admin.apePaterno @admin.apeMaterno</td>
-                <td>@admin.correo</td>
-                <td>@admin.contraseña</td>
-                
+<div class="table-container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Correo Electrónico</th>
+                <th></th>
+                <th></th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var admin in Model)
+            {
+                <tr>
+                    <td>@admin.Id</td>
+                    <td>@admin.nombres</td>
+                    <td>@admin.apePaterno @admin.apeMaterno</td>
+                    <td>@admin.correo</td>
+                    <td>
+                        <!-- Agrega enlaces para editar y eliminar según sea necesario -->
+                        <a asp-controller="Home" asp-action="Edit" asp-route-id="@admin.Id" class="btn btn-info btn-sm crud-button">Editar</a>
+                    </td>
+                    <td>
+                        <a asp-controller="Home" asp-action="Delete" asp-route-id="@admin.Id" class="btn btn-danger btn-sm crud-button">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<style>
+    .table-container {
+        margin-top: 20px;
+    }
+
+    .crud-button {
+        margin-right: 5px;
+    }
+
+    /* Estilo para las tablas */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .crearnuevo {
+        text-align: left;
+        margin-bottom: 10px;
+    }
+
+    .titulo {
+        text-align: center;
+        color: blue;
+        margin-bottom: 20px;
+    }
+</style>
+
