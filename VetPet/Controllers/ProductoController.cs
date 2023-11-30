@@ -308,5 +308,24 @@ namespace VetPet.Controllers
             return View(producto);
         }
 
+
+        public ActionResult DetailsShop(int id)
+        {
+
+            var producto = _context.Producto
+                .Include(p => p.Marca)
+                .Include(p => p.Categoria)
+                .Include(p => p.TipoAnimal)
+                .FirstOrDefault(p => p.Id == id);
+
+            if (producto == null)
+            {
+
+                return RedirectToAction("Tienda");
+            }
+
+            return View(producto);
+        }
+
     }
 }

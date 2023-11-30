@@ -1,0 +1,211 @@
+﻿@@model List<VetPet.Models.ProductoEntity>
+
+
+    @{
+        ViewData["Title"] = "Información del Producto";
+        Layout = "~/Views/Shared/_Layout-store.cshtml";
+    }
+
+    <div class="elementor__directory">
+        <div class="content__directory col-lg-10">
+            <span class="p-m-md"><a href="tienda-pet.html"><i class="fa-solid fa-house"></i> Inicio</a> / <a href="tienda-pet-productos.html">Productos</a> / <a href="#">@Model.Nonbr</a></span>
+        </div>
+    </div>
+
+    <div class="container__information-item">
+        <div class="content__information-item col-lg-10">
+            <div class="information-item__img">
+                <img src="../img/items/product-example.png" alt="image item">
+            </div>
+            <div class="information-item__details">
+                <span>@Model.Id</span>
+                <span class="p-l-in">@Model.Marca.Descripcion</span>
+                <h1 class="title-lg">@Model.Nonbre </h1>
+                <span class="p-m-lg">SKU: @Model.SKU</span>
+                <div class="item-description">
+                    <span class="p-m-lg">Descripción</span>
+                    <div class="elementor-divider"></div>
+                    <p class="p-in">Ricocan multisabores todas las razas es un alimento 100% completo y balanceado que cubre las necesidades nutricionales de la mascota gracias a su fórmula que contiene fibras naturales, minerales orgánicos, omega 3 y 6, proteínas y multivitaminas.</p>
+                </div>
+                <div class="item-price">
+                    <span class="title-sm">Precio Online</span>
+                    <span class="title-sm">S/. 118.90</span>
+                </div>
+                <div class="item-stock">
+                    <div class="elementor-configurable-stock">
+                        <span>-</span><span>1</span><span>+</span>
+                    </div>
+                    <a href="#" class="btn btn-cart-2"><i class="icon-add-cart"></i>AÑADIR AL CARRITO</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container__products-similar">
+        <div class="content__products-similar">
+            <div class="elements__header-text text-left">
+                <h1 class="title-md">Productos similares</h1>
+            </div>
+            <div class="slide-container swiper">
+                <div class="slide-content">
+                    <div class="card-wrapper swiper-wrapper">
+
+                        <div class="card-item swiper-slide">
+                            <div class="card-item-content">
+                                <div class="card-item__img">
+                                    <img src="../img/items/product-example.png" alt="image product">
+                                </div>
+                                <div class="card-item__info">
+                                    <p class="card-title">RICOCAN Adultos todas las razas multisabores Bolsa 15Kg</p>
+                                    <p class="card-price">S/. 118.90</p>
+                                    <div class="btn-card">
+                                        <a href="#" class="btn-s btn-cart-2">AGREGAR CARRITO</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-item swiper-slide">
+                            <div class="card-item-content">
+                                <div class="card-item__img">
+                                    <img src="../img/items/product-example.png" alt="image product">
+                                </div>
+                                <div class="card-item__info">
+                                    <p class="card-title">RICOCAN Adultos todas las razas multisabores Bolsa 15Kg</p>
+                                    <p class="card-price">S/. 118.90</p>
+                                    <div class="btn-card">
+                                        <a href="#" class="btn-s btn-cart-2">AGREGAR CARRITO</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-item swiper-slide">
+                            <div class="card-item-content">
+                                <div class="card-item__img">
+                                    <img src="../img/items/product-example.png" alt="image product">
+                                </div>
+                                <div class="card-item__info">
+                                    <p class="card-title">RICOCAN Adultos todas las razas multisabores Bolsa 15Kg</p>
+                                    <p class="card-price">S/. 118.90</p>
+                                    <div class="btn-card">
+                                        <a href="#" class="btn-s btn-cart-2">AGREGAR CARRITO</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-item swiper-slide">
+                            <div class="card-item-content">
+                                <div class="card-item__img">
+                                    <img src="../img/items/product-example.png" alt="image product">
+                                </div>
+                                <div class="card-item__info">
+                                    <p class="card-title">RICOCAN Adultos todas las razas multisabores Bolsa 15Kg</p>
+                                    <p class="card-price">S/. 118.90</p>
+                                    <div class="btn-card">
+                                        <a href="#" class="btn-s btn-cart-2">AGREGAR CARRITO</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-item swiper-slide">
+                            <div class="card-item-content">
+                                <div class="card-item__img">
+                                    <img src="../img/items/product-example.png" alt="image product">
+                                </div>
+                                <div class="card-item__info">
+                                    <p class="card-title">RICOCAN Adultos todas las razas multisabores Bolsa 15Kg</p>
+                                    <p class="card-price">S/. 118.90</p>
+                                    <div class="btn-card">
+                                        <a href="#" class="btn-s btn-cart-2">AGREGAR CARRITO</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-item swiper-slide">
+                            <div class="card-item-content">
+                                <div class="card-item__img">
+                                    <img src="../img/items/product-example.png" alt="image product">
+                                </div>
+                                <div class="card-item__info">
+                                    <p class="card-title">RICOCAN Adultos todas las razas multisabores Bolsa 15Kg</p>
+                                    <p class="card-price">S/. 118.90</p>
+                                    <div class="btn-card">
+                                        <a href="#" class="btn-s btn-cart-2">AGREGAR CARRITO</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-item swiper-slide">
+                            <div class="card-item-content">
+                                <div class="card-item__img">
+                                    <img src="../img/items/product-example.png" alt="image product">
+                                </div>
+                                <div class="card-item__info">
+                                    <p class="card-title">RICOCAN Adultos todas las razas multisabores Bolsa 15Kg</p>
+                                    <p class="card-price">S/. 118.90</p>
+                                    <div class="btn-card">
+                                        <a href="#" class="btn-s btn-cart-2">AGREGAR CARRITO</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-item swiper-slide">
+                            <div class="card-item-content">
+                                <div class="card-item__img">
+                                    <img src="../img/items/product-example.png" alt="image product">
+                                </div>
+                                <div class="card-item__info">
+                                    <p class="card-title">RICOCAN Adultos todas las razas multisabores Bolsa 15Kg</p>
+                                    <p class="card-price">S/. 118.90</p>
+                                    <div class="btn-card">
+                                        <a href="#" class="btn-s btn-cart-2">AGREGAR CARRITO</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-item swiper-slide">
+                            <div class="card-item-content">
+                                <div class="card-item__img">
+                                    <img src="../img/items/product-example.png" alt="image product">
+                                </div>
+                                <div class="card-item__info">
+                                    <p class="card-title">RICOCAN Adultos todas las razas multisabores Bolsa 15Kg</p>
+                                    <p class="card-price">S/. 118.90</p>
+                                    <div class="btn-card">
+                                        <a href="#" class="btn-s btn-cart-2">AGREGAR CARRITO</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-item swiper-slide">
+                            <div class="card-item-content">
+                                <div class="card-item__img">
+                                    <img src="../img/items/product-example.png" alt="image product">
+                                </div>
+                                <div class="card-item__info">
+                                    <p class="card-title">RICOCAN Adultos todas las razas multisabores Bolsa 15Kg</p>
+                                    <p class="card-price">S/. 118.90</p>
+                                    <div class="btn-card">
+                                        <a href="#" class="btn-s btn-cart-2">AGREGAR CARRITO</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <i class="fa-solid fa-angle-left swiper-prev slider__btn"></i>
+                <i class="fa-solid fa-angle-right swiper-next slider__btn"></i>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>

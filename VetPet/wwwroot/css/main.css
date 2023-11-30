@@ -26,6 +26,7 @@
 @import url(../css/pages/tienda-pet-info-producto.css);
 @import url(../css/pages/tienda-pet-productos.css);
 @import url(../css/pages/tienda-pet.css);
+@import url(../css/pages/index.css)
 
 *{
     margin: 0;

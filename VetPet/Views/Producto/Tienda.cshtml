@@ -1,4 +1,4 @@
-﻿@model List<VetPet.Models.ProductoEntity>
+﻿@@model List<VetPet.Models.ProductoEntity>
 
 @{
     ViewData["Title"] = "Tienda";
@@ -87,7 +87,9 @@
                     <div class="card-item">
                         <div class="card-item-content">
                             <div class="card-item__img">
-                                <img src="~/img/@producto.Imagen" alt="@producto.Nonbre" class="product-image">
+                                <a href="@Url.Action("DetailsShop", "Producto", new { id = producto.Id })">
+                                    <img src="~/img/@producto.Imagen" alt="@producto.Nonbre" class="product-image">
+                                </a>
                             </div>
                             <div class="card-item__info">
                                 <p class="card-title">@producto.Nonbre</p>
