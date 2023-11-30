@@ -1,0 +1,43 @@
+﻿@@model List<VetPet.Models.ProductoEntity>
+
+
+
+    <div class="elementor__directory">
+        <div class="content__directory col-lg-10">
+            <span class="p-m-md"><a href="tienda-pet.html"><i class="fa-solid fa-house"></i> Inicio</a> / <a href="tienda-pet-productos.html">Productos</a> / <a href="#">@Model.Nonbre</a></span>
+        </div>
+    </div>
+
+    <div class="container__information-item">
+        <div class="content__information-item col-lg-10">
+            <div class="information-item__img">
+                <img src="~/img/@Model.Imagen" alt="Imagen del Producto" />
+            </div>
+            <div class="information-item__details">
+                <span class="p-l-in">@Model.Marca.Descripcion</span>
+                <h1 class="title-lg">@Model.Nonbre</h1>
+                <span class="p-m-lg">SKU: @Model.SKU</span>
+                <div class="item-description">
+                    <span class="p-m-lg">Descripción</span>
+                    <div class="elementor-divider"></div>
+                    <p class="p-in">@Model.DescripcionProd</p>
+                </div>
+                <div class="item-description">
+                    <span class="p-m-lg">Caracteristicas</span>
+                    <div class="elementor-divider"></div>
+                    <p class="p-in">@Model.CaracteristicasProd</p>
+                </div>
+
+                <div class="item-price">
+                    <span class="title-sm">Precio Online</span>
+                    <span class="title-sm">S/.@Model.Precio</span>
+                </div>
+                <div class="item-stock">
+                    <div class="elementor-configurable-stock">
+                        <span>-</span><span>1</span><span>+</span>
+                    </div>
+                    <a href="#" class="btn btn-cart-2"><i class="icon-add-cart"></i>AÑADIR AL CARRITO</a>
+                </div>
+            </div>
+        </div>
+    </div>

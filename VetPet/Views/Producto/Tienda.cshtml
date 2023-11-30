@@ -1,55 +1,108 @@
-﻿@model List<VetPet.Models.ProductoEntity>
+﻿@@model List<VetPet.Models.ProductoEntity>
 
-<h2 class="titulo">Tienda</h2>
+@{
+    ViewData["Title"] = "Tienda";
+    Layout = "~/Views/Shared/_Layout-store.cshtml";
+}
 
-<div class="products-container">
-    @foreach (var producto in Model)
-    {
-        <div class="product-item">
-            <img src="~/img/@producto.Imagen" alt="@producto.Nonbre" class="product-image">
-            <h3>@producto.Nonbre</h3>
-            <p>@producto.DescripcionProd</p>
-            <p>Precio: $@producto.Precio</p>
-            <p>Stock: @producto.Stock</p>
-            <a href="@Url.Action("Details", "Producto", new { id = producto.Id })">Detalles</a>
-
-           
-            <input type="submit" value="Añadir al Carrito" class="btn btn-danger" />
-
-        </div>
-    }
+<div class="elementor__directory">
+    <div class="content__directory col-lg-10">
+        <span class="p-m-md"><a asp-action="Index"><i class="fa-solid fa-house"></i> Inicio</a> / <a href="tienda-pet-productos.html">Productos</a></span>
+    </div>
 </div>
-<style>
-    .titulo {
-        text-align: center;
-        color: blue;
-        margin-bottom: 20px;
-    }
 
-    .products-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
 
-    .product-item {
-        border: 1px solid #ddd;
-        padding: 10px;
-        margin: 10px;
-        width: 30%;
-    }
+<main class="col-lg-11">
+    <h2 class="title-md">Productos</h2>
+    <div class="content__main">
+        <div>
+            <aside>
+                <div class="elementor__filter-products">
+                    <h2 class="title-sm"><i class="fa-solid fa-filter p-xl"></i>Filtros</h2>
+                    <form action="" method="post">
+                        <div class="box-category">
+                            <p class="p-m-md">Animales</p>
+                            <div class="box-category__options">
+                                <input type="checkbox" name="" id="perro">
+                                <span class="p"><label for="perro">Perros</label></span>
+                                <input type="checkbox" name="" id="gato">
+                                <span class="p"><label for="gato">Gatos</label></span>
+                                <input type="checkbox" name="" id="otros">
+                                <span class="p"><label for="otros">Otros</label></span>
+                            </div>
+                        </div>
 
-    .product-item img {
-        max-width: 100%;
-        height: auto;
-    }
+                        <div class="box-category">
+                            <p class="p-m-md">Productos</p>
+                            <div class="box-category__options">
+                                <input type="checkbox" name="" id="alimento">
+                                <span class="p"><label for="alimento">Alimentos</label></span>
+                                <input type="checkbox" name="" id="farmacos">
+                                <span class="p"><label for="farmacos">Farmacos</label></span>
+                                <input type="checkbox" name="" id="ropa">
+                                <span class="p-"><label for="ropa">Ropa</label></span>
+                                <input type="checkbox" name="" id="juguetes">
+                                <span class="p"><label for="juguetes">Juguetes</label></span>
+                                <input type="checkbox" name="" id="otros">
+                                <span class="p"><label for="otros">Otros</label></span>
+                            </div>
+                        </div>
 
-    .product-image {
-        width: 225px;
-        height: 225px;
-        object-fit: cover; /* Esto asegura que las imágenes mantengan su relación de aspecto */
-        border: 1px solid #ddd;
-    }
-</style>
+                        <select class="input-custom input-select" name="" id="">
+                            <option class="option-disable-custom" disabled selected value="">Seleccione Marca...</option>
+                            <option value="0">Purina</option>
+                            <option value="1">Ricocan</option>
+                            <option value="2">AquaCare</option>
+                            <option value="2">Inka Cola</option>
+                            <option value="2">Coca Cola</option>
+                            <option value="2">VetPet</option>
+                            <option value="2">Lays</option>
+                        </select>
 
-     
+                        <div class="box-category">
+                            <p class="p-m-md">Precio</p>
+                            <div class="box-category__options">
+                                <input type="checkbox" name="" id="range-price-1">
+                                <span class="p"><label for="range-price-1">Hasta S/100</label></span>
+                                <input type="checkbox" name="" id="range-price-2">
+                                <span class="p"><label for="range-price-2">S/100 a S/150</label></span>
+                                <input type="checkbox" name="" id="range-price-3">
+                                <span class="p"><label for="range-price-3">S/150 a S/200</label></span>
+                                <input type="checkbox" name="" id="range-price-4">
+                                <span class="p"><label for="range-price-4">S/200 a S/300</label></span>
+                                <input type="checkbox" name="" id="range-price-5">
+                                <span class="p"><label for="range-price-5">Más de S/300</label></span>
+                            </div>
+                        </div>
+
+                        <input type="submit" value="FILTRAR" class="btn btn-exit">
+                    </form>
+                </div>
+            </aside>
+        </div>
+        <div class="container__products">
+            <div class="content__products-cards grid-store-product">
+                @foreach (var producto in Model)
+                {
+                    <div class="card-item">
+                        <div class="card-item-content">
+                            <div class="card-item__img">
+                                <a href="@Url.Action("DetailsShop", "Producto", new { id = producto.Id })">
+                                    <img src="~/img/@producto.Imagen" alt="@producto.Nonbre" class="product-image">
+                                </a>
+                            </div>
+                            <div class="card-item__info">
+                                <p class="card-title">@producto.Nonbre</p>
+                                <p class="card-price">S/. @producto.Precio</p>
+                                <div class="btn-card">
+                                    <a class="btn-s btn-cart-2" href="@Url.Action("Details", "Producto", new { id = producto.Id })">AGREGAR CARRITO</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                
+            </div>
+        </div>
+    </div>
+</main>

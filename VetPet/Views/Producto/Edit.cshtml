@@ -1,82 +1,87 @@
 ﻿@model VetPet.Models.ProductoEntity
 
-<h2 class="titulo">Editar Producto</h2>
+<div class="elementor__user-back ">
+    <div class="content__user-back col-lg-10">
+        <a asp-action="Index" class="p-m-in">
+            <i class="fa-solid fa-chevron-left"></i>
+            <span>Regresar</span>
+        </a>
+    </div>
+</div>
 
-<div class="form-container">
+<div class="content__item col-lg-10">
+    <section class="section__item">
+        <h1 class="title-lg">Editar Producto</h1>
+        <div class="elementor-divider-item"></div>
+        <p class="p-md">Modifica los parametros del producto,<br>edita cuidadosamente porfavor.</p>
+    </section>
+</div>
+
+
+
+<div class="container__form-product">
     <form asp-action="Edit" method="post" enctype="multipart/form-data">
-        <div class="form-group">
-            <img src="~/img/@Model.Imagen" alt="Imagen del producto" style="max-width: 100px; max-height: 100px" />
+
+        <div class="container-flex-form">
+            <div class="content__form">
+                <div class="form-group">
+                    <label class="label-custom" asp-for="Nonbre">Nombre</label>
+                    <input class="input-custom" asp-for="Nonbre" required>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="DescripcionProd">Descripción</label>
+                    <input class="input-custom" asp-for="DescripcionProd" required>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="CaracteristicasProd">Características</label>
+                    <textarea class="textArea-custom input-custom" asp-for="CaracteristicasProd" rows="4" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="Marca.Id">Marca</label>
+                    <select select class="input-custom input-select" asp-for="Marca.Id" asp-items="ViewBag.Marca"></select>
+                </div>
+
+                <div class="form-group">
+                    <label for="Categoria.Id">Categoría</label>
+                    <select select class="input-custom input-select" asp-for="Categoria.Id" asp-items="ViewBag.Categoria"></select>
+                </div>
+
+                <div class="form-group">
+                    <label for="TipoAnimal.Id">Tipo de Animal</label>
+                    <select select class="input-custom input-select" asp-for="TipoAnimal.Id" asp-items="ViewBag.TipoAnimal"></select>
+                </div>
+
+
+                <div class="form-group">
+                    <label asp-for="SKU">SKU (Código de Item)</label>
+                    <input asp-for="SKU" class="input-custom" required>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Precio">Precio</label>
+                    <input asp-for="Precio" class="input-custom" required>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Stock">Stock</label>
+                    <input asp-for="Stock" type="text" class="input-custom" required>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+                </div>
+            </div>
+
+            <div class="img-product">
+                <img src="~/img/@Model.Imagen" alt="Imagen del producto"/>
+            </div>
         </div>
 
-        <div class="form-group">
-            <label asp-for="Nonbre">Nombre</label>
-            <input asp-for="Nonbre" class="form-control" required>
-        </div>
 
-        <div class="form-group">
-            <label asp-for="DescripcionProd">Descripción</label>
-            <input asp-for="DescripcionProd" class="form-control" required>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="CaracteristicasProd">Características</label>
-            <textarea asp-for="CaracteristicasProd" class="form-control" rows="4" required></textarea>
-        </div>
-
-        <div class="form-group">
-    <label for="Marca.Id">Marca</label>
-    <select asp-for="Marca.Id" asp-items="ViewBag.Marca" class="form-control"></select>
-</div>
-
-<div class="form-group">
-    <label for="Categoria.Id">Categoría</label>
-    <select asp-for="Categoria.Id" asp-items="ViewBag.Categoria" class="form-control"></select>
-</div>
-
-<div class="form-group">
-    <label for="TipoAnimal.Id">Tipo de Animal</label>
-    <select asp-for="TipoAnimal.Id" asp-items="ViewBag.TipoAnimal" class="form-control"></select>
-</div>
-
-
-        <div class="form-group">
-            <label asp-for="SKU">SKU (Código de Item)</label>
-            <input asp-for="SKU" class="form-control" required>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="Precio">Precio</label>
-            <input asp-for="Precio" class="form-control" required>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="Stock">Stock</label>
-            <input asp-for="Stock" type="text" class="form-control" required>
-        </div>
-
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-            <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
-        </div>
+        
     </form>
 </div>
-
-<style>
-    .titulo {
-        text-align: center;
-        color: blue;
-        margin-bottom: 20px;
-    }
-
-    .form-container {
-        max-width: 800px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
-
-    .form-group {
-        flex-basis: 45%;
-    }
-</style>

@@ -10,7 +10,7 @@ using VetPet.Database.VetContext;
 namespace VetPet.Migrations
 {
     [DbContext(typeof(VetContext))]
-    [Migration("20231121010022_FirstMigration")]
+    [Migration("20231130200016_FirstMigration")]
     partial class FirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

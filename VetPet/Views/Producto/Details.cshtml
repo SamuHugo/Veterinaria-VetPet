@@ -1,37 +1,47 @@
-﻿@model VetPet.Models.ProductoEntity
+﻿@@model List<VetPet.Models.ProductoEntity>
 
-<h2>Detalles del Producto</h2>
-
-<div class="product-details-container">
-    <div class="product-details">
-        <h4>Nombre: @Model.Nonbre</h4>
-        <p>Descripción: @Model.DescripcionProd</p>
-        <p>Características: @Model.CaracteristicasProd</p>
-        <p>Marca: @Model.Marca.Descripcion</p>
-        <p>Categoría: @Model.Categoria.Descripcion</p>
-        <p>Tipo de Animal: @Model.TipoAnimal.Descripcion</p>
-        <p>Precio: @Model.Precio</p>
-        <p>Stock: @Model.Stock</p>
-    </div>
-    <div class="product-image">
-        <img src="~/img/@Model.Imagen" alt="Imagen del Producto" width="500" height="300"/>
+<div class="elementor__user-back ">
+    <div class="content__user-back col-lg-10">
+        <a asp-action="Index" class="p-m-in">
+            <i class="fa-solid fa-chevron-left"></i>
+            <span>Regresar</span>
+        </a>
     </div>
 </div>
-<style>
-.product-details-container {
-    display: flex;
-}
 
-.product-details {
-    flex: 1; 
-    padding: 20px; 
-}
+<div class="content__item col-lg-10">
+    <section class="section__item">
+        <h1 class="title-lg">Información de Producto</h1>
+        <div class="elementor-divider-item"></div>
+    </section>
+</div>
 
-.product-image {
-    flex: 1;
-    padding: 20px; 
-    text-align: center;
-    border-radius: 12%;
-}
-
-</style>
+<div class="container__information-item">
+    <div class="content__information-item col-lg-10">
+        <div class="information-item__img">
+            <img src="~/img/@Model.Imagen" alt="Imagen del Producto" />
+        </div>
+        <div class="information-item__details">
+            <span class="p-l-in">Marca: @Model.Marca.Descripcion</span>
+            <h1 class="title-lg">@Model.Nonbre</h1>
+            <span class="p-m-lg">SKU: @Model.SKU</span>
+            <div class="item-description">
+                <span class="p-m-lg">Descripción</span>
+                <div class="elementor-divider-item"></div>
+                <p class="p-in">@Model.DescripcionProd</p>
+            </div>
+            <div class="item-description">
+                <span class="p-m-lg">Caracteristicas</span>
+                <div class="elementor-divider-item"></div>
+                <p class="p-in">@Model.CaracteristicasProd</p>
+            </div>
+            <span class="p-m-lg">Categoria: @Model.Categoria.Descripcion</span><br />
+            <span class="p-m-lg">Tipo de Animal: @Model.TipoAnimal.Descripcion</span><br />
+            <span class="p-m-lg">Stock Disponible: @Model.Stock</span>
+            <div class="item-price">
+                <span class="title-sm">Precio Online</span>
+                <span class="title-sm">S/.@Model.Precio</span>
+            </div>
+        </div>
+    </div>
+</div>

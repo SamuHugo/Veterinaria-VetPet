@@ -42,7 +42,7 @@ namespace VetPet.Controllers
         // POST: ProductoController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(ProductoEntity model, IFormFile imagen, int categoriaId , int marcaId,int tipoAnimalId)
+        public IActionResult Create(ProductoEntity model, IFormFile imagen, int categoriaId, int marcaId, int tipoAnimalId)
         {
 
             if (ModelState.IsValid)
@@ -131,16 +131,16 @@ namespace VetPet.Controllers
         public IActionResult Edit(int id)
         {
 
-        var producto = _context.Producto
-            .Include(p => p.Marca)
-            .Include(p => p.Categoria)
-            .Include(p => p.TipoAnimal)
-            .FirstOrDefault(p => p.Id == id);
+            var producto = _context.Producto
+                .Include(p => p.Marca)
+                .Include(p => p.Categoria)
+                .Include(p => p.TipoAnimal)
+                .FirstOrDefault(p => p.Id == id);
 
-        if (producto == null)
-        {
-            return NotFound();
-        }
+            if (producto == null)
+            {
+                return NotFound();
+            }
 
             ViewBag.Marca = _context.Marca
              .Select(marca => new SelectListItem
@@ -280,6 +280,16 @@ namespace VetPet.Controllers
                 .ToList();
             return View(productos);
         }
+
+        public IActionResult Holas()
+        {
+            var productos = _context.Producto
+                .Include(p => p.Marca)
+                .Include(p => p.Categoria)
+                .Include(p => p.TipoAnimal)
+                .ToList();
+            return View(productos);
+        }
         public ActionResult Details(int id)
         {
 
@@ -298,5 +308,38 @@ namespace VetPet.Controllers
             return View(producto);
         }
 
+
+        public ActionResult DetailsShop(int id)
+        {
+
+            var producto = _context.Producto
+                .Include(p => p.Marca)
+                .Include(p => p.Categoria)
+                .Include(p => p.TipoAnimal)
+                .FirstOrDefault(p => p.Id == id);
+
+            if (producto == null)
+            {
+
+                return RedirectToAction("index");
+            }
+
+            return View(producto);
+        }
+
+        public ActionResult TarjetaForm()
+        {
+            return View();
+        }
+
+        public ActionResult ConfirmacionCompra()
+        {
+            return View();
+        }
+
+        public ActionResult Carrito()
+        {
+            return View();
+        }
     }
 }
