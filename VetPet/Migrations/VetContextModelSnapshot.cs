@@ -744,7 +744,7 @@ namespace VetPet.Migrations
             modelBuilder.Entity("VetPet.Models.ProductoEntity", b =>
                 {
                     b.HasOne("VetPet.Models.CategoriaEntity", "Categoria")
-                        .WithMany("Productos")
+                        .WithMany("Producto")
                         .HasForeignKey("CategoriaId");
 
                     b.HasOne("VetPet.Models.MarcaEntity", "Marca")

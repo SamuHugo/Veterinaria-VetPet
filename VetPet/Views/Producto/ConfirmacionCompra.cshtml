@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra Confirmada</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .confirmation-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff; /* Fondo blanco sin transparencia */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .confirmation-title {
+            font-size: 32px; /* Aumenté el tamaño del texto */
+            font-weight: bold;
+            margin-bottom: 16px;
+            color: #352E58; 
+        }
+
+        .confirmation-message {
+            font-size: 18px;
+            margin-bottom: 12px;
+            line-height: 1.4;
+            color: #333;
+            max-width: 600px; /* Establece el ancho máximo del contenedor del texto */
+            margin-left: auto; /* Centra el contenedor en el medio */
+            margin-right: auto; /* Centra el contenedor en el medio */
+        }
+
+        .back-to-store-button {
+            font-family: 'Ubuntu';
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 10px;
+            background-color: #352E58;
+            color: white;
+            /* padding: 10px 15px; */
+            border: none;
+            cursor: pointer;
+            width: 180px;
+            height: 60px;
+        }
+
+            .back-to-store-button:hover {
+                background-color: #45a049;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="confirmation-container">
+        <div class="confirmation-title">¡Gracias por su compra!</div>
+        <div class="confirmation-message">
+            ¡Gracias por realizar tu compra en nuestra tienda en línea! Tu satisfacción es nuestra prioridad. Hemos recibido con éxito tu pedido y estamos emocionados de procesarlo. Si tienes alguna pregunta o necesitas asistencia, nuestro equipo de atención al cliente está aquí para ayudarte. ¡Agradecemos tu confianza y esperamos que disfrutes de tus nuevos productos! ¡Gracias por ser parte de nuestra comunidad de compradores en línea!
+        </div>
+        <button class="back-to-store-button" id="backBtn">Volver a la tienda</button>
+    </div>
+
+    <script>
+        document.getElementById('backBtn').onclick = function () {
+            window.location.href = 'Tienda';
+        };
+    </script>
+
+</body>
+</html>
+
+
+
+
